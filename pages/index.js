@@ -247,20 +247,8 @@ export default function Home({packages}) {
         </div>
       </div>
     </div>
-    <h1 className="text-red-700 text-center text-6xl py-12">Happy Client</h1>
-    <div className=" grid md:px-36 justify-around xl:grid-cols-4 sm:grid-cols-2 text-center mb-12">
-      
-      <div className="flex flex-col items-center text-xl">Artur Siemens<Image className="rounded-md mt-4" src="/whatsapp1.png" width={200} height={300}/></div>
-      <div  className="flex flex-col items-center  text-xl">Marc Goschke
-      <Image className="rounded-md mt-4" src="/whatsapp2.png" width={200} height={300}/>
-      </div>
-      <div className="flex flex-col items-center text-xl">Jhon
-      <Image className="rounded-md mt-4" src="/whatsapp1.png" width={200} height={300} />
-      </div>
-      <div className="flex flex-col items-center text-xl">Mark
-      <Image className="rounded-md mt-4" src="/whatsapp1.png" width={200} height={300} />
-      </div>
-    </div>
+    <h1 className="text-red-700 text-center text-6xl py-12">RoadMap</h1>
+    <Image className="my-0 mx-auto" src={"/RoadMap.png"} width={550} height={0}/>
     <div className="grid my-12 md:grid-cols-2 gap-x-6 grid-cols-1 px-16" id="about">
       <div className="flex flex-col gap-4 mb-12">
         
