@@ -1,11 +1,24 @@
 import React, { useContext } from 'react'
 import { PackagesContext } from './PackagesContext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Link from 'next/link';
 
 const Product = ({name,Price,_id}) => {
+  const CustomToastWithLink = () => (
+    <div>
+      <Link href="/checkout" className='hover:text-black hover:border-b border-red-600'>{name} added to Cart</Link>
+    </div>
+  );
     const {setSelectedPackages} = useContext(PackagesContext);
     function addPackage(){
-        setSelectedPackages(prev=>[...prev,_id])
+        setSelectedPackages(prev=>[...prev,_id]);
+        
+      toast.success(CustomToastWithLink, {
+        position: toast.POSITION.TOP_RIGHT
+    })
     }
+    
   return (
     <div>
         <div key={_id} className="bg-red-800 text-white shadow-shad text-center rounded-lg py-2 pb-4">
@@ -28,7 +41,7 @@ const Product = ({name,Price,_id}) => {
         <p>Fast Delivery</p>
         </div>
         <button onClick={addPackage} className="bg-cyan-500 shadow-lg shadow-cyan-500/50 text-white p-2 rounded-md hover:shadow-indigo-500/40">Add to Cart</button>
-
+        <ToastContainer />
       </div>
     </div>
   )
