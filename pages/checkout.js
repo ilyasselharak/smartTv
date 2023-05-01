@@ -5,6 +5,8 @@ import { useContext, useEffect, useState } from "react";
 
 import { initMongoose } from '@/lib/mongoose';
 import { findAllPackages } from './api/packages';
+import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
+
 export default function CheckoutPage({packages}) {
 
 
@@ -17,7 +19,7 @@ export default function CheckoutPage({packages}) {
     const [name,setName] = useState('');
     const [email,setEmail] = useState('');
     const [phone,setPhone] = useState('');
-    
+    const currency="EUR";
     useEffect(() => {
         const uniqIds = [...new Set(selectedPackages)];
         if(!uniqIds.length){
@@ -47,6 +49,7 @@ export default function CheckoutPage({packages}) {
     for (let id of selectedPackages) {
       const price = packagesInfos.find(p => p._id === id)?.Price || 0;
       subtotal += price;
+      localStorage.setItem("price",subtotal.toFixed(2))
     }
   }
   const total = subtotal.toFixed(2)
@@ -83,7 +86,7 @@ export default function CheckoutPage({packages}) {
                   <div className="pl-4 items-center">
                     <h3 className="font-bold text-lg">{packageInfo.name}</h3>
                     <div className="flex mt-1 gap-2">
-                      <div className="grow font-bold">${packageInfo.Price}</div>
+                      <div className="grow font-bold">€{packageInfo.Price}</div>
                       <div>
                         <button onClick={() => lessOfThisPackage(packageInfo._id)} className="border border-emerald-500 px-2 rounded-lg text-emerald-500">-</button>
                         <span className="px-2">
@@ -96,6 +99,7 @@ export default function CheckoutPage({packages}) {
                 </div>
               )}):""}
               </div>
+              <div>
               <form action="/api/checkout" method="POST">
         <div className="mt-8">
         <input name="name" value={name} onChange={e => setName(e.target.value)} className="bg-gray-100 w-full rounded-lg px-4 py-2 mb-2" type="text" placeholder="Your Name (*)"/>
@@ -103,24 +107,50 @@ export default function CheckoutPage({packages}) {
           <input name="address" value={address} onChange={e => setAddress(e.target.value)} className="bg-gray-100 w-full rounded-lg px-4 py-2 mb-2" type="text" placeholder="Street address, number"/>
           <input name="city" value={city} onChange={e => setCity(e.target.value)} className="bg-gray-100 w-full rounded-lg px-4 py-2 mb-2" type="text" placeholder="City, postal code"/>
           <input name="phone" value={phone} onChange={e => setPhone(e.target.value)} className="bg-gray-100 w-full rounded-lg px-4 py-2 mb-2" type="tel" placeholder="Tel Whatsapp : +..-...-...-   (*)"/>
+          
         </div>
         <div className="mt-8">
          
           <div className="flex my-3 border-t pt-3 border-dashed border-emerald-500">
             <h3 className="grow font-bold text-gray-400">Total:</h3>
-            <h3 className="font-bold">${total}</h3>
+            <h3 className="font-bold">€{total}</h3>
           </div>
         </div>
         <input type="hidden" name="packages" value={selectedPackages.join(',')}/>
         {(name!=="" & email.includes("@") & phone!=="")?' ':'Enter the required info (*)'}
        
         {(total!=0 & email.includes("@") & phone!=="" &name!=="")?
-        <button type="submit" className="bg-emerald-500 px-5 py-2 rounded-xl font-bold text-white w-full my-4 shadow-emerald-300 shadow-lg">Pay ${total} </button>:<> <button disabled type="submit" className="bg-emerald-100 px-5 py-2 rounded-xl font-bold text-white w-full my-4 shadow-emerald-300 shadow-lg">Pay ${total} </button></>}
+        <button type="submit" className="bg-emerald-500 px-5 py-2 rounded-xl font-bold text-white w-full my-4 shadow-emerald-300 shadow-lg">Pay €{total} </button>:<> <button disabled type="submit" className="bg-emerald-100 px-5 py-2 rounded-xl font-bold text-white w-full my-4 shadow-emerald-300 shadow-lg">Pay €{total} </button></>}
         
-        <div className="text-center">
-      
-        </div>
+        
       </form>
+      <details>
+        <summary>Continue with Paypal</summary>
+        <div className="text-center">
+          <PayPalScriptProvider options={{"client-id":"AfOdtgsnapcKiyjtQxZ8VWmnGNfyKg4K3eF_WlBdTF0K60wNSpsT5S9GnkHqH7Y9lz_LcTttohoAQwdj",currency: "EUR"}}>
+          <PayPalButtons style={{
+                color: "silver",
+                layout: "horizontal",
+                shape:"pill"
+              }}
+              createOrder={(data,actions)=>{
+                  return actions.order.create({
+                    purchase_units: [
+                      {
+                        amount: {
+                          
+                          value: localStorage.getItem("price"),
+                      },
+                    }
+                    ]
+                  })
+              }}
+              />
+            
+          </PayPalScriptProvider>
+        </div>
+      </details>
+      </div>
       
       </div>
         
