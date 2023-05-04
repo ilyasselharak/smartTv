@@ -65,7 +65,7 @@ export default function CheckoutPage({packages}) {
   return (
     <>
     <div>
-     <div className={`bg-white h-screen w-[50%] left-[30%] shadow-shad overflow-scroll fixed z-[1] rounded-xl ${pay ? "" : "hidden"}`}><Pay setPay={setPay} pay={pay}/></div>
+     <div className={`bg-white h-screen w-[80%] left-[10%] shadow-shad overflow-scroll fixed z-[1] rounded-xl ${pay ? "" : "hidden"}`}><Pay setPay={setPay} pay={pay}/></div>
     </div>
     <Header/>
     <div className="mt-32 "></div>
