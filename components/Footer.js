@@ -1,9 +1,20 @@
 import Image from 'next/image'
+import { PackagesContext } from './PackagesContext';
+import  { useContext } from 'react'
 
 import {FaInstagram,FaFacebook,FaTwitter} from "react-icons/fa"
 import Link from 'next/link'
+import { ToastContainer, toast } from 'react-toastify';
 
-const Footer = () => {
+
+const Footer = (data) => {
+    const CustomToastWithLink = () => (
+        <div>
+          <Link href="/checkout" className='hover:text-black hover:border-b border-red-600'>{name} added to Cart</Link>
+        </div>
+      );
+    const {setSelectedPackages} = useContext(PackagesContext);
+
   return (
     <div className='bg-black w-full h-vh bg-black border-t border-gray-500'>
         
@@ -22,19 +33,19 @@ const Footer = () => {
             </div>
             <div className='text-center flex flex-col gap-1'>
                 <h1 className='text-2xl pb-2'>LINKS</h1>
-                <p><Link href={'#price'} >Pricing</Link></p>
-        <p><Link href={'/blog'}>BLOG</Link></p>
-        <p><Link href={'#about'}>ABOUT</Link></p>
+                <p><Link href={'/#price'} >Pricing</Link></p>
+        <p><Link href={'/#about'}>ABOUT</Link></p>
         <p><Link href={'/contact'}>CONTACTUS</Link></p>
         <p><Link href={'/business'}>BUSINESS</Link></p>
-        <p><Link href={'/business'}>CART</Link></p>
+        <p><Link href={'/checkout'}>CART</Link></p>
             </div>
+            
             <div className='text-center flex flex-col gap-1'>
                 <h1 className='text-2xl pb-2'>Packages</h1>
-                <p><Link href={'/'} >1 Month </Link></p>
-        <p><Link href={'#price'}>3 Month</Link></p>
-        <p><Link href={'#price'}>6 Month</Link></p>
-        <p><Link href={'/about'}>12 Month</Link></p>
+                {data.data?.map(item=>{
+                    return <button onClick={()=>{setSelectedPackages(prev=>[...prev,item._id]);toast.success(CustomToastWithLink, {position: toast.POSITION.TOP_RIGHT})}}>{item.name}</button>
+                })}
+                <ToastContainer />
             </div>
             <div className='text-center'>
                 <h1>Contact US</h1>

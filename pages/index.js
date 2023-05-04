@@ -303,7 +303,7 @@ export default function Home({packages}) {
         </SwiperSlide>
         
       </Swiper>
-    <Footer/>
+    <Footer data={packages}/>
     </div>
     
     </>

@@ -1,11 +1,15 @@
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Autoplay, Pagination, Navigation } from "swiper";
 import { PackagesContext } from "@/components/PackagesContext";
 import { useContext, useEffect, useState } from "react";
-
 import { initMongoose } from '@/lib/mongoose';
 import { findAllPackages } from './api/packages';
 import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
+import Image from "next/image";
+import Pay from "@/components/Pay";
 
 export default function CheckoutPage({packages}) {
 
@@ -19,7 +23,8 @@ export default function CheckoutPage({packages}) {
     const [name,setName] = useState('');
     const [email,setEmail] = useState('');
     const [phone,setPhone] = useState('');
-    const currency="EUR";
+    const [pay,setPay] = useState(false)
+
     useEffect(() => {
         const uniqIds = [...new Set(selectedPackages)];
         if(!uniqIds.length){
@@ -43,6 +48,10 @@ export default function CheckoutPage({packages}) {
             return prev.filter((value,index) => index !== pos);
           });
         }
+       
+        if(pos==0){
+          localStorage.setItem('price',0)
+        }
       }
   let subtotal = 0;
   if (selectedPackages?.length) {
@@ -53,9 +62,11 @@ export default function CheckoutPage({packages}) {
     }
   }
   const total = subtotal.toFixed(2)
-    
   return (
     <>
+    <div>
+     <div className={`bg-white h-screen w-[50%] left-[30%] shadow-shad overflow-scroll fixed z-[1] rounded-xl ${pay ? "" : "hidden"}`}><Pay setPay={setPay} pay={pay}/></div>
+    </div>
     <Header/>
     <div className="mt-32 "></div>
 <div className="  my-0 mx-auto">
@@ -75,8 +86,8 @@ export default function CheckoutPage({packages}) {
         )})}
                </div>   
               {!packagesInfos.length && (
-        <div className="mt-6">select any package please </div>
-      )}
+        <div className="mt-6 text-center">Choose Your Package</div>
+      )}<div className="flex gap-x-5 flex-wrap">
       {
         packagesInfos.length ? packagesInfos.map(packageInfo=>{
             
@@ -99,6 +110,10 @@ export default function CheckoutPage({packages}) {
                 </div>
               )}):""}
               </div>
+              <div className="border border-1 border-black p-5 w-[50%] mx-auto mt-7">
+                <p>Important By purchasing our product you are accepting automatically our <button className="text-blue-700 hover:underline" onClick={()=>setPay(!pay)}>Refund Policy</button></p>
+              </div>
+              </div>
               <div>
               <form action="/api/checkout" method="POST">
         <div className="mt-8">
@@ -118,15 +133,56 @@ export default function CheckoutPage({packages}) {
         </div>
         <input type="hidden" name="packages" value={selectedPackages.join(',')}/>
         {(name!=="" & email.includes("@") & phone!=="")?' ':'Enter the required info (*)'}
+        <Swiper style={{"z-index": "0"}}
+    autoplay={{
+      delay: 2000,
+      disableOnInteraction: false,
+    }}
+    pagination={{
+      clickable: true,
+    }}
+    navigation={true}
+      slidesPerView={4}
+      modules={[Autoplay, Pagination, Navigation]}
+    >
+      
+      <SwiperSlide>
+      <Image src="/visa.png" width={50} height={50}/>
        
+      </SwiperSlide>
+      <SwiperSlide>
+      <Image src="/ideal.png" width={50} height={50}/>
+      
+      </SwiperSlide>
+      <SwiperSlide>
+      <Image src="/mastercard.png" width={50} height={50}/>
+      
+      </SwiperSlide>
+      <SwiperSlide>
+      <Image src="/sofort.png" width={50} height={50}/>
+      
+      </SwiperSlide>
+      <SwiperSlide>
+      <Image src="/gpay.png" width={50} height={50}/>
+      
+      </SwiperSlide>
+      <SwiperSlide>
+      <Image src="/apay.png" width={50} height={50}/>
+      
+      </SwiperSlide>
+      <SwiperSlide>
+      <Image src="/giropay.png" width={50} height={50}/>
+      
+      </SwiperSlide>
+    </Swiper>
         {(total!=0 & email.includes("@") & phone!=="" &name!=="")?
         <button type="submit" className="bg-emerald-500 px-5 py-2 rounded-xl font-bold text-white w-full my-4 shadow-emerald-300 shadow-lg">Pay €{total} </button>:<> <button disabled type="submit" className="bg-emerald-100 px-5 py-2 rounded-xl font-bold text-white w-full my-4 shadow-emerald-300 shadow-lg">Pay €{total} </button></>}
         
         
       </form>
       <details>
-        <summary>Continue with Paypal</summary>
-        <div className="text-center">
+        <summary>Continue with <Image src="/paypal.png" style={{display:"inline-block"}} width={50} height={50}/></summary>
+        {selectedPackages.length!==0 ? (<div className="text-center">
           <PayPalScriptProvider options={{"client-id":"AfOdtgsnapcKiyjtQxZ8VWmnGNfyKg4K3eF_WlBdTF0K60wNSpsT5S9GnkHqH7Y9lz_LcTttohoAQwdj",currency: "EUR"}}>
           <PayPalButtons style={{
                 color: "silver",
@@ -148,7 +204,7 @@ export default function CheckoutPage({packages}) {
               />
             
           </PayPalScriptProvider>
-        </div>
+        </div>):<div className="text-center">Your Cart is empty</div>}
       </details>
       </div>
       
