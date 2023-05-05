@@ -10,6 +10,7 @@ import { findAllPackages } from './api/packages';
 import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 import Image from "next/image";
 import Pay from "@/components/Pay";
+import Head from "next/head";
 
 export default function CheckoutPage({packages}) {
 
