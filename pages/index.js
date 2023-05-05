@@ -107,7 +107,7 @@ export default function Home({packages}) {
       </div>
       </div>
      <div className="flex flex-col items-center justify-end">
-     <Image className="rounded-md wx-auto my-6" src="/movie2.jpg" width={200} height={130}/>
+     <Image className="rounded-md wx-auto my-6" src="/movie2.jpg" alt="movie iptv" width={200} height={130}/>
      <div>
      <p>We have a big list of VOD & Movies in multiple languages English, French, German, Italian, Spanish and Arabic etc…</p>
      <strong>Movies</strong>

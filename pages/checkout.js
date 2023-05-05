@@ -64,6 +64,12 @@ export default function CheckoutPage({packages}) {
   const total = subtotal.toFixed(2)
   return (
     <>
+    <Head>
+      <title>IPtvConfig | Cart</title>
+      <link rel='icon' type="image/x-icon" href="/logo.png"/>
+      <meta content='' name='description'/>
+      <meta content='' name='title'/>
+    </Head>
     <div>
      <div className={`bg-white h-screen w-[80%] left-[10%] shadow-shad overflow-scroll fixed z-[1] rounded-xl ${pay ? "" : "hidden"}`}><Pay setPay={setPay} pay={pay}/></div>
     </div>

@@ -43,7 +43,7 @@ const Footer = (data) => {
             <div className='text-center flex flex-col gap-1'>
                 <h1 className='text-2xl pb-2'>Packages</h1>
                 {data.data?.map(item=>{
-                    return <button onClick={()=>{setSelectedPackages(prev=>[...prev,item._id]);toast.success(CustomToastWithLink, {position: toast.POSITION.TOP_RIGHT})}}>{item.name}</button>
+                    return <button className='h-12' onClick={()=>{setSelectedPackages(prev=>[...prev,item._id]);toast.success(CustomToastWithLink, {position: toast.POSITION.TOP_RIGHT})}}>{item.name}</button>
                 })}
                 <ToastContainer />
             </div>
