@@ -68,8 +68,9 @@ export default function CheckoutPage({packages}) {
     <Head>
       <title>IPtvConfig | Cart</title>
       <link rel='icon' type="image/x-icon" href="/logo.png"/>
-      <meta content='' name='description'/>
-      <meta content='' name='title'/>
+      <meta content='For €14 a Month | 151.000 Live & Movies | 2500 Full Series through one IPTV Subscription. The Amazing TV is The Best IPTV Service, well known now as a great reliable IPTV Provider. It is in fa...' name='description'/>
+      <meta content='IPTV Provider | The best IPTV Service Provider' name='title'/>
+      <meta content="best iptv provider for USA, best iptv deal, secure payment, iptv reseller, american channels, asian channels list, european channels list, how to install iptv, channel list, arabic channels list, iptv subscription, holidays offer, better than netflix, iptv smarters, iptv box, iptv player,cobra,king 365,ott,m3u,mag,smart iptv,test,messi iptv price, iptv box, best iptv provider, best iptv alternative, quality, premium iptv subscription, 12 months premium iptv subscription, best iptv provider for 2023, full channel list, iptv on firestick 4k, iptv reddit, iptv smarters pro" name="keywords"/>
     </Head>
     <div>
      <div className={`bg-white h-screen w-[80%] left-[10%] shadow-shad overflow-scroll fixed z-[1] rounded-xl ${pay ? "" : "hidden"}`}><Pay setPay={setPay} pay={pay}/></div>
