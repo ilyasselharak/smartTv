@@ -32,12 +32,12 @@ const Footer = (data) => {
                 </div>
             </div>
             <div className='text-center flex flex-col gap-1'>
-                <h1 className='text-2xl pb-2'>LINKS</h1>
+                <h1 className='text-2xl pb-2 h-12'>LINKS</h1>
                 <p><Link href={'/#price'} >Pricing</Link></p>
-        <p><Link href={'/#about'}>ABOUT</Link></p>
-        <p><Link href={'/contact'}>CONTACTUS</Link></p>
-        <p><Link href={'/business'}>BUSINESS</Link></p>
-        <p><Link href={'/checkout'}>CART</Link></p>
+        <p><Link  className='h-12' href={'/#about'}>ABOUT</Link></p>
+        <p><Link  className='h-12' href={'/contact'}>CONTACTUS</Link></p>
+        <p><Link  className='h-12' href={'/business'}>BUSINESS</Link></p>
+        <p><Link className='h-12' href={'/checkout'}>CART</Link></p>
             </div>
             
             <div className='text-center flex flex-col gap-1'>
