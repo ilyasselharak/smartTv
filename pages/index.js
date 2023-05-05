@@ -100,7 +100,7 @@ export default function Home({packages}) {
     </div>
     <div className=" grid justify-around gap-3 text-lg text-center xl:grid-cols-3 sm:grid-cols-2 xl:px-72 sm:32 py-16">
       <div className="flex flex-col items-center justify-center">
-      <Image className="rounded-md wx-auto my-6" src="/movie.jpg" width={200} height={130}/>
+      <Image className="rounded-md wx-auto my-6" src="/movie.jpg" alt="movies" width={200} height={130}/>
       <div>
       <p>All Premium TV Channels WorldWide FHD and 4K Sports, News, Movies, Documentary, Movie channels, and more</p>
       <strong>Live TV Channels</strong>
@@ -114,7 +114,7 @@ export default function Home({packages}) {
      </div>
      </div>
       <div className="flex flex-col items-center justify-center">
-      <Image className="rounded-md wx-auto my-6 -[150px]" src="/movie1.jpg" width={200} height={130} />
+      <Image className="rounded-md wx-auto my-6 -[150px]" src="/movie1.jpg" alt="movies" width={200} height={130} />
       <div>
       <p>We have the best TV Shows of all time for you, which are updated regularly. You may also request a TV Series or TV Shows.</p>
       <strong>TV Shows</strong>
@@ -248,7 +248,7 @@ export default function Home({packages}) {
       </div>
     </div>
     <h1 className="text-red-700 text-center text-6xl py-12">RoadMap</h1>
-    <Image className="my-0 mx-auto" src={"/RoadMap.png"} width={550} height={0}/>
+    <Image className="my-0 mx-auto" alt="road map of iptv website" src={"/RoadMap.png"} width={550} height={0}/>
     <div className="grid my-12 md:grid-cols-2 gap-x-6 grid-cols-1 px-16" id="about">
       <div className="flex flex-col gap-4 mb-12">
         
@@ -271,7 +271,7 @@ export default function Home({packages}) {
         </div>
       </div>
       <div className="flex justify-center m-auto gap-4">
-      <Image src="/tv.jpg" className="rounded-md" width={200} height={300}/>
+      <Image src="/tv.jpg" className="rounded-md" alt="tv iptv" width={200} height={300}/>
 
         </div>
       

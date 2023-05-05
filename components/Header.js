@@ -27,7 +27,7 @@ const Header = () => {
     <div className='md:flex items-center bg-mycustomcolor border-b py-4 border-red-400 justify-around'>
     <Link href="/">
       <div className='flex text-white text-2xl ml-2 items-center'>
-        IP<Image src="/logo.png" width={70} height={70}/>
+        IP<Image src="/logo.png" alt="logo iptv" width={70} height={70}/>
       </div></Link>
       <div className=' flex gap-2 absolute right-8 top-6 md:hidden'>
       <div className='block md:hidden text-red-600'>
