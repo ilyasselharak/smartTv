@@ -179,34 +179,34 @@ export default function Home({packages}) {
       modules={[Autoplay, Pagination, Navigation]}
     >
       <SwiperSlide>
-      <Image src="/paypal.png" width={70} height={70}/>
+      <Image src="/paypal.png" alt="paypal" width={70} height={70}/>
       </SwiperSlide>
       <SwiperSlide>
-      <Image src="/visa.png" width={70} height={70}/>
+      <Image src="/visa.png" alt="vasa cart" width={70} height={70}/>
        
       </SwiperSlide>
       <SwiperSlide>
-      <Image src="/ideal.png" width={70} height={70}/>
+      <Image src="/ideal.png" alt="ideal" width={70} height={70}/>
       
       </SwiperSlide>
       <SwiperSlide>
-      <Image src="/mastercard.png" width={70} height={70}/>
+      <Image src="/mastercard.png" alt="mastercart" width={70} height={70}/>
       
       </SwiperSlide>
       <SwiperSlide>
-      <Image src="/sofort.png" width={70} height={70}/>
+      <Image src="/sofort.png" alt="sofort" width={70} height={70}/>
       
       </SwiperSlide>
       <SwiperSlide>
-      <Image src="/gpay.png" width={70} height={70}/>
+      <Image src="/gpay.png" alt="google pay" width={70} height={70}/>
       
       </SwiperSlide>
       <SwiperSlide>
-      <Image src="/apay.png" width={70} height={70}/>
+      <Image src="/apay.png" alt="apple pay" width={70} height={70}/>
       
       </SwiperSlide>
       <SwiperSlide>
-      <Image src="/giropay.png" width={70} height={70}/>
+      <Image src="/giropay.png" alt="giro pay" width={70} height={70}/>
       
       </SwiperSlide>
     </Swiper>
@@ -280,27 +280,41 @@ export default function Home({packages}) {
     style={{"z-index": "0"}}
         spaceBetween={20}
         slidesPerView={4}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay, Pagination, Navigation]}
         >
       
         <SwiperSlide>
-          <Image src="/netflix.png" width={200} height={300}/>
+          <Image src="/netflix.png" alt="netflix" width={200} height={300}/>
         </SwiperSlide>
         <SwiperSlide>
-        <Image src="/disney.png" width={200} height={300}/>
+        <Image src="/disney.png" alt="disney" width={200} height={300}/>
           
         </SwiperSlide>
         <SwiperSlide>
-        <Image src="/bein.png" width={200} height={300}/>
+        <Image src="/hbo.png" alt="hbo" width={200} height={300} />
+
+        </SwiperSlide>
+        <SwiperSlide>
+        <Image src="/bein.png" alt="bien" width={200} height={300}/>
         
         </SwiperSlide>
         <SwiperSlide>
-        <Image src="/prime.png" width={200} height={300}/>
+        <Image src="/prime.png" alt="prime" width={200} height={300}/>
 
         </SwiperSlide>
         <SwiperSlide>
-        <Image src="/hbo.png" width={200} height={300} />
+        <Image src="/Nlziet.svg" alt="nlziet" width={200} height={300} />
 
         </SwiperSlide>
+        <SwiperSlide>
+        <Image src="/appleTv.svg" alt="appleTv" width={200} height={300} />
+
+        </SwiperSlide>
+        
         
       </Swiper>
     <Footer data={packages}/>

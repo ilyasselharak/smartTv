@@ -110,7 +110,7 @@ export default function CheckoutPage({packages}) {
                 </div>
               )}):""}
               </div>
-              <div className="border border-1 border-black p-5 w-[50%] mx-auto mt-7">
+              <div className="border border-1 border-black p-5 w-[80%] sm:[50%] mx-auto mt-7">
                 <p>Important By purchasing our product you are accepting automatically our <button className="text-blue-700 hover:underline" onClick={()=>setPay(!pay)}>Refund Policy</button></p>
               </div>
               </div>
@@ -147,31 +147,31 @@ export default function CheckoutPage({packages}) {
     >
       
       <SwiperSlide>
-      <Image src="/visa.png" width={50} height={50}/>
+      <Image src="/visa.png" alt="visa" width={50} height={50}/>
        
       </SwiperSlide>
       <SwiperSlide>
-      <Image src="/ideal.png" width={50} height={50}/>
+      <Image src="/ideal.png" alt="ideal" width={50} height={50}/>
       
       </SwiperSlide>
       <SwiperSlide>
-      <Image src="/mastercard.png" width={50} height={50}/>
+      <Image src="/mastercard.png" alt="masterCart" width={50} height={50}/>
       
       </SwiperSlide>
       <SwiperSlide>
-      <Image src="/sofort.png" width={50} height={50}/>
+      <Image src="/sofort.png" alt="sofort" width={50} height={50}/>
       
       </SwiperSlide>
       <SwiperSlide>
-      <Image src="/gpay.png" width={50} height={50}/>
+      <Image src="/gpay.png" alt="google pay" width={50} height={50}/>
       
       </SwiperSlide>
       <SwiperSlide>
-      <Image src="/apay.png" width={50} height={50}/>
+      <Image src="/apay.png" alt="apple pay" width={50} height={50}/>
       
       </SwiperSlide>
       <SwiperSlide>
-      <Image src="/giropay.png" width={50} height={50}/>
+      <Image src="/giropay.png" alt="giro pay" width={50} height={50}/>
       
       </SwiperSlide>
     </Swiper>
@@ -181,7 +181,7 @@ export default function CheckoutPage({packages}) {
         
       </form>
       <details>
-        <summary>Continue with <Image src="/paypal.png" style={{display:"inline-block"}} width={50} height={50}/></summary>
+        <summary>Continue with <Image src="/paypal.png" alt="paypal" style={{display:"inline-block"}} width={50} height={50}/></summary>
         {selectedPackages.length!==0 ? (<div className="text-center">
           <PayPalScriptProvider options={{"client-id":"AfOdtgsnapcKiyjtQxZ8VWmnGNfyKg4K3eF_WlBdTF0K60wNSpsT5S9GnkHqH7Y9lz_LcTttohoAQwdj",currency: "EUR"}}>
           <PayPalButtons style={{

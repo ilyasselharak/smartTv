@@ -22,7 +22,7 @@ const Footer = (data) => {
         <div className=' grid px-8 py-4 gap-3 gap-y-8 xl:grid-cols-4 sm:grid-cols-2 items-center  justify-around text-white'>
         
             <div className='text-center flex flex-col gap-1'>
-                <Image className="m-auto text-center " src="/logo.png" width={120} height={70}/>
+                <Image className="m-auto text-center " src="/logo.png" alt="iptv" width={120} height={70}/>
                 <span>https://localhost://3000</span>
                 <h1 className=''>Follow us in </h1>
                 <div className='flex justify-center gap-4'>
