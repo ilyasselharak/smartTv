@@ -208,7 +208,9 @@ export default function CheckoutPage({packages}) {
                 shape:"pill"
               }}
               onApprove={(data,action)=>{
+
                 document.querySelector('#payment-form').submit();
+                setSelectedPackages([])
               }}
               createOrder={(data,actions)=>{
                   return actions.order.create({
