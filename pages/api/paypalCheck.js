@@ -6,6 +6,8 @@ export default async function handle(req,res){
     await initMongoose();
     if(req.method !== 'POST'){
         res.json('should a post but its not');
+        res.redirect("https://www.tv-smart.store/")
+
         return;
     }
     const {email,name,address,city,phone} = req.body;
