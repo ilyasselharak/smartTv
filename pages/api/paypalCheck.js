@@ -23,5 +23,5 @@ export default async function handle(req,res){
         alert("you bought package")
         
     })
-    res.redirect("http://localhost:3000/")
+    res.redirect("https://www.tv-smart.store/")
 }
