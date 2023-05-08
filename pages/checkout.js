@@ -189,7 +189,7 @@ export default function CheckoutPage({packages}) {
         
         
       </form> */}
-      <form id="payment-form" action="/api/paypalCheck" method="POST">
+      <form id="payment-form" action="/api/paypalCheck" method="GET">
       <div className="mt-8 hidden">
         <input name="name" value={total} onChange={e => setName(e.target.value)} className="bg-gray-100 w-full rounded-lg px-4 py-2 mb-2" type="text" placeholder="Your Name (*)"/>
           <input name="email" value={selectedPackages} onChange={e => setEmail(e.target.value)} className="bg-gray-100 w-full rounded-lg px-4 py-2 mb-2" type="email" placeholder="Email Address (*)"/>
