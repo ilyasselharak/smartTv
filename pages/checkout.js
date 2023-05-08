@@ -201,7 +201,7 @@ export default function CheckoutPage({packages}) {
     
         Continue with <Image src="/paypal.png" alt="paypal" style={{display:"inline-block"}} width={50} height={50}/> for this moment
         {selectedPackages.length!==0 ? (<div className="text-center">
-          <PayPalScriptProvider options={{"client-id":"AUOZp7_27mbs1HjbTGoj0bX1Do4oMXaPONyTnzAVo8g-_UeJpI32s2qKnEliE4eGu68C9P-SyT0XjHNY",currency: "EUR"}}>
+          <PayPalScriptProvider options={{"client-id":"AfhkCQXJACV0EzlNmb2kDGuapZhcT-8QrtovwilMr9SnNq-I5_xMJBtw3qbN9gBvcduSy9s-UXGsO1EY",currency: "EUR"}}>
           <PayPalButtons style={{
                 color: "silver",
                 layout: "vertical",
