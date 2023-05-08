@@ -40,10 +40,10 @@ export default function Home({packages}) {
   return (
     <>
     <Head>
-      <title>IPtvConfig</title>
+      <title>TvSmart</title>
       <link rel='icon' type="image/x-icon" href="/logo.png"/>
       <meta content="best iptv provider for USA, best iptv deal, secure payment, iptv reseller, american channels, asian channels list, european channels list, how to install iptv, channel list, arabic channels list, iptv subscription, holidays offer, better than netflix, iptv smarters, iptv box, iptv player,cobra,king 365,ott,m3u,mag,smart iptv,test,messi iptv price, iptv box, best iptv provider, best iptv alternative, quality, premium iptv subscription, 12 months premium iptv subscription, best iptv provider for 2023, full channel list, iptv on firestick 4k, iptv reddit, iptv smarters pro" name="keywords"/>
-      <meta content='For €14 a Month | 151.000 Live & Movies | 2500 Full Series through one IPTV Subscription. The Amazing TV is The Best IPTV Service, well known now as a great reliable IPTV Provider. It is in fa...' name='description'/>
+      <meta content='For €12 a Month | 151.000 Live & Movies | 2500 Full Series through one IPTV Subscription. The Amazing TV is The Best IPTV Service, well known now as a great reliable IPTV Provider. It is in fa...' name='description'/>
       <meta content='IPTV Provider | The best IPTV Service Provider' name='title'/>
     </Head>
     <Header/>
@@ -155,12 +155,12 @@ export default function Home({packages}) {
     <div className=" text-center text-xl pb-2">Choose Your IPTV SUBSCRIPTION</div>
     
       <div className=" pl-4 text-center text-xl border border-black p-4 m-4 rounded-md"><span className="text-rose-400 pr-4">DISCOUNT:  </span>{days}DAYS:{hours}HOURS:{minutes}MINUTES</div>
-      <div className=" grid px-8 pb-5 gap-4 xl:grid-cols-4 sm:grid-cols-2 justify-around">
+      <div className=" flex px-8 pb-5 gap-4 flex-wrap justify-around">
       {
       packages?.map(item=>{
         return (
         
-        <Product Price={item.Price} name={item.name} _id={item._id}/>
+        <Product key={item._id} Price={item.Price} name={item.name} _id={item._id}/>
     
         
         )})}
@@ -212,7 +212,7 @@ export default function Home({packages}) {
       </SwiperSlide>
     </Swiper>
     </div>
-    <div className="grid my-12 md:grid-cols-2 gap-x-6 grid-cols-1 md:px-52 sm:px-48 xl:px-72 py-4 2xl:px-80 lg:px-64 px-32">
+    <div className="grid my-12 md:grid-cols-2 gap-x-12 grid-cols-1 md:px-52 sm:px-48 xl:px-72 py-4 2xl:px-80 lg:px-64 px-32">
       <div className="flex flex-col gap-4 mb-12">
         
         <div className="text-red-700 text-4xl py-4">

@@ -23,7 +23,7 @@ const Footer = (data) => {
         
             <div className='text-center flex flex-col gap-1'>
                 <Image className="m-auto text-center " src="/logo.png" alt="iptv" width={120} height={70}/>
-                <span>https://localhost://3000</span>
+                <span>https://www.tv-smart.store/</span>
                 <h1 className=''>Follow us in </h1>
                 <div className='flex justify-center gap-4'>
                 <Link href="/"><FaInstagram/></Link>
@@ -43,7 +43,7 @@ const Footer = (data) => {
             <div className='text-center flex flex-col gap-1'>
                 <h1 className='text-2xl pb-2'>Packages</h1>
                 {data.data?.map(item=>{
-                    return <button className='h-12' onClick={()=>{setSelectedPackages(prev=>[...prev,item._id]);toast.success(CustomToastWithLink, {position: toast.POSITION.TOP_RIGHT})}}>{item.name}</button>
+                    return <div key={item._id}><button className='h-12' onClick={()=>{setSelectedPackages(prev=>[...prev,item._id]);toast.success(CustomToastWithLink, {position: toast.POSITION.TOP_RIGHT})}}>{item.name}</button></div>
                 })}
                 <ToastContainer />
             </div>

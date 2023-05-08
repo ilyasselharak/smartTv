@@ -87,9 +87,10 @@ export default function CheckoutPage({packages}) {
                 {
       packages?.map(item=>{
         return (
-          
+          <div key={item._id}>
           <button className="bg-cyan-500 shadow-lg shadow-cyan-500/50 text-white p-2 rounded-md hover:shadow-indigo-500/40" onClick={()=>{setSelectedPackages(prev=>[...prev,item._id])}}>{item.name} </button>
-    
+          </div>
+
         
         )})}
                </div>   
@@ -123,7 +124,7 @@ export default function CheckoutPage({packages}) {
               </div>
               </div>
               <div>
-              <form action="/api/checkout" method="POST">
+              {/* <form action="/api/checkout" method="POST">
         <div className="mt-8">
         <input name="name" value={name} onChange={e => setName(e.target.value)} className="bg-gray-100 w-full rounded-lg px-4 py-2 mb-2" type="text" placeholder="Your Name (*)"/>
           <input name="email" value={email} onChange={e => setEmail(e.target.value)} className="bg-gray-100 w-full rounded-lg px-4 py-2 mb-2" type="email" placeholder="Email Address (*)"/>
@@ -183,19 +184,31 @@ export default function CheckoutPage({packages}) {
       
       </SwiperSlide>
     </Swiper>
-        {(total!=0 & email.includes("@") & phone!=="" &name!=="")?
-        <button type="submit" className="bg-emerald-500 px-5 py-2 rounded-xl font-bold text-white w-full my-4 shadow-emerald-300 shadow-lg">Pay €{total} </button>:<> <button disabled type="submit" className="bg-emerald-100 px-5 py-2 rounded-xl font-bold text-white w-full my-4 shadow-emerald-300 shadow-lg">Pay €{total} </button></>}
+         {(total!=0 & email.includes("@") & phone!=="" &name!=="")?
+         <button disabled type="submit" className="bg-emerald-500 px-5 py-2 rounded-xl font-bold text-red-700 w-full my-4 shadow-emerald-300 shadow-lg">Sorry we working on paying with This methods </button>:<> <button  type="submit" className="bg-emerald-100 px-5 py-2 rounded-xl font-bold text-white w-full my-4 shadow-emerald-300 shadow-lg">Pay €{total} </button></>} 
         
         
-      </form>
-      <details>
-        <summary>Continue with <Image src="/paypal.png" alt="paypal" style={{display:"inline-block"}} width={50} height={50}/></summary>
+      </form> */}
+      <form id="payment-form" action="/api/paypalCheck" method="POST">
+      <div className="mt-8 hidden">
+        <input name="name" value={total} onChange={e => setName(e.target.value)} className="bg-gray-100 w-full rounded-lg px-4 py-2 mb-2" type="text" placeholder="Your Name (*)"/>
+          <input name="email" value={selectedPackages} onChange={e => setEmail(e.target.value)} className="bg-gray-100 w-full rounded-lg px-4 py-2 mb-2" type="email" placeholder="Email Address (*)"/>
+          <input name="address" value={address} onChange={e => setAddress(e.target.value)} className="bg-gray-100 w-full rounded-lg px-4 py-2 mb-2" type="text" placeholder="Street address, number"/>
+          <input name="city" value={city} onChange={e => setCity(e.target.value)} className="bg-gray-100 w-full rounded-lg px-4 py-2 mb-2" type="text" placeholder="City, postal code"/>
+          <input name="phone" value={phone} onChange={e => setPhone(e.target.value)} className="bg-gray-100 w-full rounded-lg px-4 py-2 mb-2" type="tel" placeholder="Tel Whatsapp : +..-...-...-   (*)"/>
+          
+        </div>
+    
+        Continue with <Image src="/paypal.png" alt="paypal" style={{display:"inline-block"}} width={50} height={50}/> for this moment
         {selectedPackages.length!==0 ? (<div className="text-center">
           <PayPalScriptProvider options={{"client-id":"AfOdtgsnapcKiyjtQxZ8VWmnGNfyKg4K3eF_WlBdTF0K60wNSpsT5S9GnkHqH7Y9lz_LcTttohoAQwdj",currency: "EUR"}}>
           <PayPalButtons style={{
                 color: "silver",
-                layout: "horizontal",
+                layout: "vertical",
                 shape:"pill"
+              }}
+              onApprove={(data,action)=>{
+                document.querySelector('#payment-form').submit();
               }}
               createOrder={(data,actions)=>{
                   return actions.order.create({
@@ -213,7 +226,9 @@ export default function CheckoutPage({packages}) {
             
           </PayPalScriptProvider>
         </div>):<div className="text-center">Your Cart is empty</div>}
-      </details>
+      
+      </form>
+      <div>if you got any problems with payment we are online contact us</div>
       </div>
       
       </div>

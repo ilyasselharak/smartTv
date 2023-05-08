@@ -36,6 +36,7 @@ export default async function handler(req,res){
         address,
         city,
         phone,
+        method:"card",
         paid:0,
       });
       const session = await stripe.checkout.sessions.create({
@@ -46,6 +47,5 @@ export default async function handler(req,res){
         cancel_url: `${req.headers.origin}/?canceled=true`,
         metadata: {orderId:order._id.toString()}
       });
-    
       res.redirect(303, session.url);
 }

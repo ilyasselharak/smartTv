@@ -22,7 +22,7 @@ const Product = ({name,Price,_id}) => {
   return (
     <div>
         <div key={_id} className="bg-red-800 text-white shadow-shad text-center rounded-lg py-2 pb-4">
-        <div className=" border-b-2 py-1 border-red-200 bg-darkCyan"><h1 className='text-2xl'>{name}</h1>
+        <div className=" border-b-2 p-2 border-red-200 bg-darkCyan"><h1 className='text-2xl'>{name}</h1>
         <p>Sports, News, Series, Movies, Cartons</p>
         </div>
         

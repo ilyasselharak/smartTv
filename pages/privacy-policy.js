@@ -8,16 +8,16 @@ export default function PrivacyPolicy() {
         <h2 className="text-4xl">Introduction</h2>
 <p>Welcome to Digital RS Solutions LLC.</p>
 
-<p>Digital RS Solutions LLC  We operates https://localhost:3000 (hereinafter referred to as “Service”).</p>
+<p>Digital RS Solutions LLC  We operates https://www.tv-smart.store/ (hereinafter referred to as “Service”).</p>
 
-<p>Our Privacy Policy governs your visit to https://localhost:3000, and explains how we collect, safeguard and disclose information that results from your use of our Service.</p>
+<p>Our Privacy Policy governs your visit to https://www.tv-smart.store/, and explains how we collect, safeguard and disclose information that results from your use of our Service.</p>
 
 <p>We use your data to provide and improve Service. By using Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, the terms used in this Privacy Policy have the same meanings as in our Terms and Conditions.</p>
 
 <p>Our Terms and Conditions (“Terms”) govern all use of our Service and together with the Privacy Policy constitutes your agreement with us (“agreement”).</p>
 
 <h2 className="text-4xl">Definitions</h2>
-<p>SERVICE means the https://localhost:3000 website operated by Digital RS Solutions LLC.</p>
+<p>SERVICE means the https://www.tv-smart.store/ website operated by Digital RS Solutions LLC.</p>
 
 <p>PERSONAL DATA means data about a living individual who can be identified from those data (or from those and other information either in our possession or likely to come into our possession).</p>
 

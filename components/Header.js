@@ -23,7 +23,7 @@ const Header = () => {
     
     
     return (
-<div className='top-0 shadow-shad left-0 z-[1] fixed w-full'>
+<div className={` ${(path==='/checkout'?'':'fixed  ')} duration-500   top-0 shadow-shad left-0 z-[1] w-full`}>
     <div className='md:flex items-center bg-mycustomcolor border-b py-4 border-red-400 justify-around'>
     <Link href="/">
       <div className='flex text-white text-2xl ml-2 items-center'>
