@@ -230,14 +230,16 @@ export default function CheckoutPage({packages}) {
         amount={localStorage.getItem("price")}
         // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
         onSuccess={(details, data) => {
-          alert("Transaction completed by " + details.payer.name.given_name);
+          document.querySelector('#payment-form').submit();
 
           
         }}
+        
         options={{
           clientId: 
           "AUQP1ceKXtUHdksNZODq9cgZe_02qaMI2OuirldJojqyn2z9A0mXT21DMuvnjBCb_JjGglppctuDQoCf",
           currency:"EUR",
+        
         }}
       />
         </div>):<div className="text-center">Your Cart is empty</div>}
