@@ -1,8 +1,8 @@
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import { Autoplay, Pagination, Navigation } from "swiper";
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import 'swiper/css';
+// import { Autoplay, Pagination, Navigation } from "swiper";
 import { PackagesContext } from "@/components/PackagesContext";
 import { useContext, useEffect, useState } from "react";
 import { initMongoose } from '@/lib/mongoose';
@@ -69,7 +69,7 @@ export default function CheckoutPage({packages}) {
       <title>IPtvConfig | Cart</title>
       <link rel='icon' type="image/x-icon" href="/logo.png"/>
       <meta content='For €14 a Month | 151.000 Live & Movies | 2500 Full Series through one IPTV Subscription. The Amazing TV is The Best IPTV Service, well known now as a great reliable IPTV Provider. It is in fa...' name='description'/>
-      <meta content='IPTV Provider | The best IPTV Service Provider' name='title'/>
+      <meta content='IPTV Provider | Cart' name='title'/>
       <meta content="best iptv provider for USA, best iptv deal, secure payment, iptv reseller, american channels, asian channels list, european channels list, how to install iptv, channel list, arabic channels list, iptv subscription, holidays offer, better than netflix, iptv smarters, iptv box, iptv player,cobra,king 365,ott,m3u,mag,smart iptv,test,messi iptv price, iptv box, best iptv provider, best iptv alternative, quality, premium iptv subscription, 12 months premium iptv subscription, best iptv provider for 2023, full channel list, iptv on firestick 4k, iptv reddit, iptv smarters pro" name="keywords"/>
     </Head>
     <div>
@@ -201,7 +201,7 @@ export default function CheckoutPage({packages}) {
     
         Continue with <Image src="/paypal.png" alt="paypal" style={{display:"inline-block"}} width={50} height={50}/> for this moment
         {selectedPackages.length!==0 ? (<div className="text-center">
-          <PayPalScriptProvider options={{"client-id":"AZxXLsldfIP2YTwNNJmWa2H-bjmObu4miwr8di5xyOd0kN3ewMvEyFZ7oZTxL1i9W4kzn08NpM1d5_ja",currency: "EUR"}}>
+          <PayPalScriptProvider options={{"client-id":"AUQP1ceKXtUHdksNZODq9cgZe_02qaMI2OuirldJojqyn2z9A0mXT21DMuvnjBCb_JjGglppctuDQoCf",currency: "EUR"}}>
           <PayPalButtons style={{
                 color: "silver",
                 layout: "vertical",
@@ -210,7 +210,6 @@ export default function CheckoutPage({packages}) {
               onApprove={(data,action)=>{
 
                 document.querySelector('#payment-form').submit();
-                setSelectedPackages([])
               }}
               createOrder={(data,actions)=>{
                   return actions.order.create({
@@ -236,7 +235,7 @@ export default function CheckoutPage({packages}) {
         
       
 </div>
-    <Footer/>
+    <Footer data={packages}/>
     </>
   )
 }
