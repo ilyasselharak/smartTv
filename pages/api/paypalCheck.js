@@ -20,5 +20,4 @@ export default async function handle(req,res){
         paid:1,
       });
     order.save()
-    res.redirect("https://tv-smart.store/success")
 }

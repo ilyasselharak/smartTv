@@ -231,13 +231,11 @@ export default function CheckoutPage({packages}) {
         // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
         onSuccess={(details, data) => {
           document.querySelector('#payment-form').submit();
-
-          
         }}
         
         options={{
           clientId: 
-          "AUQP1ceKXtUHdksNZODq9cgZe_02qaMI2OuirldJojqyn2z9A0mXT21DMuvnjBCb_JjGglppctuDQoCf",
+          "AZxXLsldfIP2YTwNNJmWa2H-bjmObu4miwr8di5xyOd0kN3ewMvEyFZ7oZTxL1i9W4kzn08NpM1d5_ja",
           currency:"EUR",
         
         }}
