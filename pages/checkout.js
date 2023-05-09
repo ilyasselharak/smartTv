@@ -8,6 +8,7 @@ import { useContext, useEffect, useState } from "react";
 import { initMongoose } from '@/lib/mongoose';
 import { findAllPackages } from './api/packages';
 import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
+import { PayPalButton } from "react-paypal-button-v2";
 import Image from "next/image";
 import Pay from "@/components/Pay";
 import Head from "next/head";
@@ -201,7 +202,7 @@ export default function CheckoutPage({packages}) {
     
         Continue with <Image src="/paypal.png" alt="paypal" style={{display:"inline-block"}} width={50} height={50}/> for this moment
         {selectedPackages.length!==0 ? (<div className="text-center">
-          <PayPalScriptProvider options={{"client-id":"AUQP1ceKXtUHdksNZODq9cgZe_02qaMI2OuirldJojqyn2z9A0mXT21DMuvnjBCb_JjGglppctuDQoCf",currency: "EUR"}}>
+          {/* <PayPalScriptProvider options={{"client-id":"AUQP1ceKXtUHdksNZODq9cgZe_02qaMI2OuirldJojqyn2z9A0mXT21DMuvnjBCb_JjGglppctuDQoCf",currency: "EUR"}}>
           <PayPalButtons style={{
                 color: "silver",
                 layout: "vertical",
@@ -224,7 +225,21 @@ export default function CheckoutPage({packages}) {
               }}
               />
             
-          </PayPalScriptProvider>
+          </PayPalScriptProvider> */}
+          <PayPalButton
+        amount={localStorage.getItem("price")}
+        // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+        onSuccess={(details, data) => {
+          alert("Transaction completed by " + details.payer.name.given_name);
+
+          
+        }}
+        options={{
+          clientId: 
+          "AUQP1ceKXtUHdksNZODq9cgZe_02qaMI2OuirldJojqyn2z9A0mXT21DMuvnjBCb_JjGglppctuDQoCf",
+          currency:"EUR",
+        }}
+      />
         </div>):<div className="text-center">Your Cart is empty</div>}
       
       </form>
