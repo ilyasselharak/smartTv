@@ -268,7 +268,7 @@ export default function CheckoutPage({ packages }) {
                   <PayPalScriptProvider
                     options={{
                       "client-id":
-                        process.env.PAYPAL_CLIENT_ID,
+                        "AZxXLsldfIP2YTwNNJmWa2H-bjmObu4miwr8di5xyOd0kN3ewMvEyFZ7oZTxL1i9W4kzn08NpM1d5_ja",
                       currency: "EUR",
                     }}
                   >
