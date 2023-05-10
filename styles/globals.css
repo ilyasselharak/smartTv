@@ -17,3 +17,7 @@ a:hover{
 .bg3{
   background-image: url('/bg3.jpg');
 }
+
+.mySwiper .swiper-wrapper .swiper-slide{
+  width: fit-content;
+}

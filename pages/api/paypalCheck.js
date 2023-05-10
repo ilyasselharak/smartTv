@@ -1,6 +1,5 @@
 import { initMongoose } from "@/lib/mongoose";
 import Order from "@/modules/Order";
-import Package from "@/modules/Packages";
 
 export default async function handle(req,res){
     await initMongoose();
@@ -20,4 +19,5 @@ export default async function handle(req,res){
         paid:1,
       });
     order.save()
+    return res.redirect(307, '/success')
 }
