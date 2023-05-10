@@ -16,14 +16,12 @@ const Product = ({ name, Price, _id }) => {
     </div>
   );
   const { setSelectedPackages } = useContext(PackagesContext);
+  
+  const notify = (name) => toast(`🦄 ${name} added to Card!`);
   function addPackage() {
     setSelectedPackages((prev) => [...prev, _id]);
-
-    toast.success(CustomToastWithLink, {
-      position: toast.POSITION.TOP_RIGHT,
-    });
+    notify(name)
   }
-
   return (
     <div className="w-[261px] sm:w-[300px]">
       <div

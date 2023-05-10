@@ -131,8 +131,8 @@ export default function Home({ packages }) {
 
         <div className="px-4">
           <div className=" text-center text-xl pt-2">
-            One of The best subscriptions service with more up to 19999 channels
-            and more than 99999 Movies and tv shows.
+            One of The best subscriptions service with more up to 18000 channels
+            and more than 21999 Movies and tv shows.
           </div>
           <div className=" text-center text-xl pt-2">
             When you use our IPTV server You will be able to watch TV channels,
