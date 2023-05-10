@@ -2,7 +2,7 @@ import Image from "next/image";
 import { PackagesContext } from "./PackagesContext";
 import { useContext } from "react";
 
-import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
+// import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
 import Link from "next/link";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -18,7 +18,11 @@ const Footer = (data) => {
     </div>
   );
   const { setSelectedPackages } = useContext(PackagesContext);
-
+  function addPackage() {
+    toast.success(CustomToastWithLink, {
+      position: toast.POSITION.TOP_RIGHT,
+    });
+  }
   return (
     <div className="bg-black w-full h-vh bg-black border-t border-gray-500">
       <div className=" grid px-8 py-4 gap-3 gap-y-8 xl:grid-cols-4 sm:grid-cols-2 items-center  justify-around text-white">
@@ -72,9 +76,7 @@ const Footer = (data) => {
                   className="h-12"
                   onClick={() => {
                     setSelectedPackages((prev) => [...prev, item._id]);
-                    toast.success(CustomToastWithLink, {
-                      position: toast.POSITION.TOP_RIGHT,
-                    });
+                    addPackage()
                   }}
                 >
                   {item.name}
