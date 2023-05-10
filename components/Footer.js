@@ -5,24 +5,13 @@ import { useContext } from "react";
 // import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
 import Link from "next/link";
 import { ToastContainer, toast } from "react-toastify";
-
+import 'react-toastify/dist/ReactToastify.css';
 const Footer = (data) => {
-  const CustomToastWithLink = () => (
-    <div>
-      <Link
-        href="/checkout"
-        className="hover:text-black hover:border-b border-red-600"
-      >
-        {name} added to Cart
-      </Link>
-    </div>
-  );
+  
   const { setSelectedPackages } = useContext(PackagesContext);
-  function addPackage() {
-    toast.success(CustomToastWithLink, {
-      position: toast.POSITION.TOP_RIGHT,
-    });
-  }
+    const notify = (name) => toast(`🦄 ${name} added to Card!`);
+
+
   return (
     <div className="bg-black w-full h-vh bg-black border-t border-gray-500">
       <div className=" grid px-8 py-4 gap-3 gap-y-8 xl:grid-cols-4 sm:grid-cols-2 items-center  justify-around text-white">
@@ -76,15 +65,15 @@ const Footer = (data) => {
                   className="h-12"
                   onClick={() => {
                     setSelectedPackages((prev) => [...prev, item._id]);
-                    addPackage()
+                    notify(item.name)
                   }}
                 >
                   {item.name}
                 </button>
+                <ToastContainer />
               </div>
             );
           })}
-          <ToastContainer />
         </div>
         <div className="text-center">
           <h1 className="text-red-600 pb-2 text-2xl">Contact US</h1>
