@@ -272,7 +272,7 @@ export default function Home({ packages }) {
           navigation={true}
           slidesPerView="auto"
           spaceBetween={20}
-          modules={[Pagination, Navigation]}
+          modules={[Autoplay,Pagination, Navigation]}
         >
           {packages?.map((item) => {
             return (
