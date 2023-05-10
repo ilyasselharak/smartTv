@@ -17,11 +17,15 @@ const Product = ({ name, Price, _id }) => {
   );
   const { setSelectedPackages } = useContext(PackagesContext);
   
-  const notify = (name) => toast(`🦄 ${name} added to Card!`);
-  function addPackage() {
-    setSelectedPackages((prev) => [...prev, _id]);
-    notify(name)
-  }
+  const addPackage = () => {setSelectedPackages((prev) => [...prev, _id]);
+  toast(`🦄 ${name} added to Card!`,{
+    position: "top-right",
+    autoClose: 2000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    
+    })};
+ 
   return (
     <div className="w-[261px] sm:w-[300px]">
       <div
@@ -57,7 +61,7 @@ const Product = ({ name, Price, _id }) => {
         >
           Add to Cart
         </button>
-        <ToastContainer />
+        
       </div>
     </div>
   );

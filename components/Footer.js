@@ -9,7 +9,13 @@ import 'react-toastify/dist/ReactToastify.css';
 const Footer = (data) => {
   
   const { setSelectedPackages } = useContext(PackagesContext);
-    const notify = (name) => toast(`🦄 ${name} added to Card!`);
+    const notify = (name) => toast(`🦄 ${name} added to Card!`,{
+    position: "top-right",
+    autoClose: 2000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    
+    });
 
 
   return (
