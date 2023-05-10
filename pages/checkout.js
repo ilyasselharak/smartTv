@@ -91,7 +91,7 @@ export default function CheckoutPage({ packages }) {
         We are trying to add this payment methods please pay with PayPal
       </div>
       <Swiper
-        style={{ "z-index": "0" }}
+        style={{ "z-index": "-2" }}
         autoplay={{
           delay: 2000,
           disableOnInteraction: false,
