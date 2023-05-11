@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { PackagesContext } from "./PackagesContext";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
 
@@ -16,15 +16,17 @@ const Product = ({ name, Price, _id }) => {
     </div>
   );
   const { setSelectedPackages } = useContext(PackagesContext);
-  
-  const addPackage = () => {setSelectedPackages((prev) => [...prev, _id]);
-  toast(`🦄 ${name} added to Card!`,{
-    position: "top-right",
-    autoClose: 2000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    })};
- 
+
+  const addPackage = () => {
+    setSelectedPackages((prev) => [...prev, _id]);
+    toast(`🦄 ${name} added to Card!`, {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+    });
+  };
+
   return (
     <div className="w-[261px] sm:w-[300px]">
       <div
@@ -60,7 +62,6 @@ const Product = ({ name, Price, _id }) => {
         >
           Add to Cart
         </button>
-        
       </div>
     </div>
   );

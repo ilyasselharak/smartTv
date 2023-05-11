@@ -285,7 +285,6 @@ export default function CheckoutPage({ packages }) {
                         layout: "vertical",
                         shape: "pill",
                       }}
-                      
                       onApprove={(data, action) => {
                         document.querySelector("#payment-form").submit();
                       }}
