@@ -14,6 +14,7 @@ import { findAllPackages } from "./api/packages";
 import Product from "@/components/Product";
 import Link from "next/link";
 import Head from "next/head";
+import { ToastContainer } from "react-toastify";
 
 export default function Home({ packages }) {
   const [days, setDays] = useState(0);
@@ -288,7 +289,7 @@ export default function Home({ packages }) {
             );
           })}
         </Swiper>
-
+        <ToastContainer />
         <div>
           <div className="text-red-700 text-center text-4xl py-6" id="price">
             Methods

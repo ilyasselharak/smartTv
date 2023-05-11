@@ -23,7 +23,6 @@ const Product = ({ name, Price, _id }) => {
     autoClose: 2000,
     hideProgressBar: false,
     closeOnClick: true,
-    
     })};
  
   return (

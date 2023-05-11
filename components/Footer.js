@@ -30,6 +30,7 @@ const Footer = (data) => {
             height={70}
           />
           <span>https://www.tv-smart.store/</span>
+          
           {/* <h1 className="">Follow us in </h1>
           <div className="flex justify-center gap-4">
             <Link href="/">
@@ -76,7 +77,7 @@ const Footer = (data) => {
                 >
                   {item.name}
                 </button>
-                <ToastContainer />
+                
               </div>
             );
           })}
