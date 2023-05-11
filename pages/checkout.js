@@ -266,9 +266,7 @@ export default function CheckoutPage({ packages }) {
               {selectedPackages.length !== 0 ? (
                 <div className="text-center mt-6">
                   <PayPalScriptProvider
-                    options={{
-                      "client-id":
-                        "AZxXLsldfIP2YTwNNJmWa2H-bjmObu4miwr8di5xyOd0kN3ewMvEyFZ7oZTxL1i9W4kzn08NpM1d5_ja",
+                    options={{"client-id":"AZxXLsldfIP2YTwNNJmWa2H-bjmObu4miwr8di5xyOd0kN3ewMvEyFZ7oZTxL1i9W4kzn08NpM1d5_ja",
                       currency: "EUR",
                     }}
                   >
