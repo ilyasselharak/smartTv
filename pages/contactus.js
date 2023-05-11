@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { initMongoose } from "@/lib/mongoose";
 import { findAllPackages } from "./api/packages";
+import Head from "next/head";
 
 export default function ContactUs({ packages }) {
   return (
