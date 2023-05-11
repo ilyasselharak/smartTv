@@ -99,7 +99,7 @@ export default function Home({ packages }) {
                 <div className="xl:text-4xl text-orange-600 font-bold text-2xl pb-2">
                    HELP YOU ACTIVATE AND RUN YOU SERVER
                 </div>
-                <div className="text-xl">FUll HD, 4K ULTRA HD ...</div>
+                <div className="text-xl mb-3">FUll HD, 4K ULTRA HD ...</div>
                 
                  <Link
                   className="rounded-md text-xl p-2 mt-2 bg-[#8A2BE2] text-white"

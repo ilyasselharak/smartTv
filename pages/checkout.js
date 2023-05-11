@@ -219,7 +219,6 @@ export default function CheckoutPage({ packages }) {
           <div>
             <form id="payment-form" action="/api/paypalCheck" method="POST">
               <div className="mt-8 hidden">
-                
                 <input
                   name="address"
                   value={selectedPackages}
@@ -262,11 +261,21 @@ export default function CheckoutPage({ packages }) {
                 type="tel"
                 placeholder="Tel Whatsapp : +..-...-...-   (*)"
               />
-              <div>You will pay: <span className="text-green-700">{total} EUR</span> {total==0?<span className="text-red-700">choose a package</span>:""}</div>
+              <div>
+                You will pay:{" "}
+                <span className="text-green-700">{total} EUR</span>{" "}
+                {total == 0 ? (
+                  <span className="text-red-700">choose a package</span>
+                ) : (
+                  ""
+                )}
+              </div>
               {selectedPackages.length !== 0 ? (
                 <div className="text-center mt-6">
                   <PayPalScriptProvider
-                    options={{"client-id":"AZxXLsldfIP2YTwNNJmWa2H-bjmObu4miwr8di5xyOd0kN3ewMvEyFZ7oZTxL1i9W4kzn08NpM1d5_ja",
+                    options={{
+                      "client-id":
+                        "AZxXLsldfIP2YTwNNJmWa2H-bjmObu4miwr8di5xyOd0kN3ewMvEyFZ7oZTxL1i9W4kzn08NpM1d5_ja",
                       currency: "EUR",
                     }}
                   >
@@ -276,6 +285,7 @@ export default function CheckoutPage({ packages }) {
                         layout: "vertical",
                         shape: "pill",
                       }}
+                      
                       onApprove={(data, action) => {
                         document.querySelector("#payment-form").submit();
                       }}
@@ -298,18 +308,27 @@ export default function CheckoutPage({ packages }) {
               )}
             </form>
             <div className="text-center text-red-700 mt-5">
-              {total==0?"":<div>If you got any problems with payment we are online<Link
-                className="hover:text-red-600 text-red-900 hover:text-xl"
-                href="/contactus"
-              >
-                {" "}
-                Contact Us
-              </Link></div>}
-              
+              {total == 0 ? (
+                ""
+              ) : (
+                <div>
+                  If you got any problems with payment we are online
+                  <Link
+                    className="hover:text-red-600 text-red-900 hover:text-xl"
+                    href="/contactus"
+                  >
+                    {" "}
+                    Contact Us
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </div>
-        <div className="text-center mb-4 text-green-700">After you made payment we will contact you withing 30 min to help you active your IPTV</div>
+        <div className="text-center mb-4 text-green-700">
+          After you made payment we will contact you withing 30 min to help you
+          active your IPTV
+        </div>
       </div>
       <Footer data={packages} />
     </>
