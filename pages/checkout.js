@@ -203,18 +203,7 @@ export default function CheckoutPage({ packages }) {
                   })
                 : ""}
             </div>
-            <div className="border border-1 border-black p-5 w-[80%] sm:[50%] mx-auto my-7">
-              <p>
-                Important By purchasing our product you are accepting
-                automatically our{" "}
-                <button
-                  className="text-blue-700 hover:underline"
-                  onClick={() => setPay(!pay)}
-                >
-                  Refund Policy
-                </button>
-              </p>
-            </div>
+            
           </div>
           <div>
             <form id="payment-form" action="/api/paypalCheck" method="POST">
@@ -274,8 +263,7 @@ export default function CheckoutPage({ packages }) {
                 <div className="text-center mt-6">
                   <PayPalScriptProvider
                     options={{
-                      "client-id":
-                        "AZxXLsldfIP2YTwNNJmWa2H-bjmObu4miwr8di5xyOd0kN3ewMvEyFZ7oZTxL1i9W4kzn08NpM1d5_ja",
+                      "client-id":"AfhkCQXJACV0EzlNmb2kDGuapZhcT-8QrtovwilMr9SnNq-I5_xMJBtw3qbN9gBvcduSy9s-UXGsO1EY",
                       currency: "EUR",
                     }}
                   >
@@ -324,6 +312,18 @@ export default function CheckoutPage({ packages }) {
             </div>
           </div>
         </div>
+        <div className="border border-1 border-black p-5 w-[80%] sm:[50%] mx-auto my-7">
+              <p>
+                Important By purchasing our product you are accepting
+                automatically our{" "}
+                <button
+                  className="text-blue-700 hover:underline"
+                  onClick={() => setPay(!pay)}
+                >
+                  Refund Policy
+                </button>
+              </p>
+            </div>
         <div className="text-center mb-4 text-green-700">
           After you made payment we will contact you withing 30 min to help you
           active your IPTV
