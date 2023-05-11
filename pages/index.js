@@ -90,24 +90,8 @@ export default function Home({ packages }) {
               </div>
             </div>
           </SwiperSlide>
-          {/* <SwiperSlide>
-            <div className="h-[500px] bg1 xl:h-[700px] bg-cover bg-center">
-              <div className="text-white xl:w-[60%] xl:pt-[9%] sm:pt-[12%] pt-[13%] pl-[4%]">
-                <h1 className="pb-2 border-b border-red-500 w-fit mb-2">
-                  Luxury IPTV
-                </h1>
-                <div className="xl:text-4xl text-orange-600 font-bold text-2xl pb-2">
-                  + 242,000 Live & VODs
-                </div>
-                <div className="text-xl">FUll HD, 4K ULTRA HD ...</div>
-                <button className="rounded-md text-xl p-2 mt-2 bg-red-600 text-white">
-                  See channels
-                </button>
-              </div>
-            </div>
-          </SwiperSlide> */}
           <SwiperSlide>
-            <div className="h-[500px] bg3  xl:h-[700px] bg-cover bg-center">
+            <div className="h-[500px] bg1 xl:h-[700px] bg-cover bg-center">
               <div className="text-white xl:w-[60%] xl:pt-[9%] sm:pt-[12%] pt-[13%] pl-[4%]">
                 <h1 className="pb-2 border-b border-red-500 w-fit mb-2">
                   INSTANT ACTIVATION
@@ -124,8 +108,13 @@ export default function Home({ packages }) {
                 </Link>
               </div>
             </div>
+          </SwiperSlide> 
+          {/* <SwiperSlide>
+            <div className="h-[500px] bg3  xl:h-[700px] bg-cover bg-center">
+              
+            </div>
           </SwiperSlide>
-        </Swiper>
+        </Swiper> */}
         <div className="text-red-700 text-center text-6xl py-6">
           Why Subscribe to Our Service
         </div>
