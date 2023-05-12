@@ -113,16 +113,16 @@ export default function CheckoutPage() {
       case "Bank":
         return (
           <div className="flex justify-center text-2xl mt-6">
-            <div>
+            <div className="text-black">
               <div>
-                <span className=" font-bold">Currency:</span> EUR
+                <span className="text-white font-bold">Currency:</span> EUR
               </div>
               <div>
-                <span className="font-bold">IBAN:</span> LT:10 3250 0289 0285
+                <span className=" text-white font-bold">IBAN:</span> LT:10 3250 0289 0285
                 6313
               </div>
               <div>
-                <span className="font-bold">BIC:</span> REVOLT21
+                <span className=" text-white font-bold">BIC:</span> REVOLT21
               </div>
             </div>
           </div>
@@ -237,7 +237,7 @@ export default function CheckoutPage() {
               <label htmlFor="crypto">Crypto Currency:</label>
             </div>
           </div>
-          <div className="flex items-end">
+          <div className="flex items-end sm:flex-col">
             <div className="w-[50%]">
               <div className="text-2xl font-bold mt-8">Your Order</div>
               {packagesInfos.length

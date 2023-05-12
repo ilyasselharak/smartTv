@@ -8,7 +8,7 @@ const coinInitRoute = async(req, res) => {
   try {
     const chargeData = {
       name: name,
-      description: "description",
+      description: "tv-smart provide you best iptv",
       pricing_type: "fixed_price",
       local_price: {
         amount: price,
