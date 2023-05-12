@@ -25,7 +25,7 @@ const coinInitRoute = async(req, res) => {
     res.send(charge);
   
   } catch (e) {
-    res.status(500).send({error:e});
+    console.log(e.response.data)
   }
 
 }
