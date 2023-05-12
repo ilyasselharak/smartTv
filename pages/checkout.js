@@ -118,7 +118,7 @@ export default function CheckoutPage() {
                 <span className="text-white font-bold">Currency:</span> EUR
               </div>
               <div>
-                <span className=" text-white font-bold">IBAN:</span> LT:10 3250 0289 0285
+                <div className=" text-white font-bold">IBAN: </div> LT:10 3250 0289 0285
                 6313
               </div>
               <div>
