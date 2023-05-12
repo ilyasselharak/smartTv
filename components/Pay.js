@@ -7,7 +7,7 @@ const Pay = ({setPay,pay}) => {
   
         return (
             <><div className="relative p-9 w-full">
-        <div className="absolute right-2 top-2" ><AiOutlineClose className="hover:text-red-700" onClick={()=>{setPay(!pay)}}/></div>
+        <div className="absolute right-2 top-2" ><AiOutlineClose className="hover:text-red-700 text-4xl" onClick={()=>{setPay(!pay)}}/></div>
             <div className="text-4xl border-b border-1 w-full border-gray-400 pb-5 mb-5">
                 <h1>Refund Policy</h1>
 

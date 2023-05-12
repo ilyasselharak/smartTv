@@ -49,6 +49,6 @@ export default async function coinVerifyRoute(req, res) {
         res.status(500).send("error"); 
     }
 
-    return res.redirect(307, '/') 
+    return res.redirect(302, '/success') 
 
 };
