@@ -18,7 +18,7 @@ export default function CheckoutPage() {
   const handleCheckboxChange = (option) => {
     setSelectedOption(option);
   };
-  
+
   useEffect(() => {
     const uniqIds = [...new Set(selectedPackages)];
     if (!uniqIds.length) {
@@ -64,7 +64,7 @@ export default function CheckoutPage() {
     setLoading(true);
     try {
       const data = await axios.post("/api/init", {
-        id: selectedPackages[0].id,
+        id: selectedPackages[0]._id,
         price: total,
         name: name,
       });
@@ -92,7 +92,7 @@ export default function CheckoutPage() {
                   layout: "vertical",
                   shape: "pill",
                 }}
-                onClick={(data, action) => {
+                onApprove={(data, action) => {
                   document.querySelector("#payment-form").submit();
                 }}
                 createOrder={(data, actions) => {
