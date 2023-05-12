@@ -19,5 +19,5 @@ export default async function handle(req, res) {
     paid: 1,
   });
   order.save();
-  return res.redirect(307, '/success')
+  return res.redirect(302, '/success')
 }
