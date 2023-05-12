@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }) {
 
       <CookieConsent
         debug={true}
-        style={{ background: "rgb(220 38 38)" }}
+        style={{ background: "rgb(220 38 38)", opacity:"0.7"}}
         buttonStyle={{ borderRadius: "10px" }}
         buttonText="That Fine!"
       >
