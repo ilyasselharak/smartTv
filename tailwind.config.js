@@ -14,8 +14,9 @@ module.exports = {
       },
       colors: {
           'mycustomcolor': '#151515',
+          'My': '#2c3e50',
           'chartreuse': '#7FFF00',
-          "darkCyan":'darkcyan'
+          "darkCyan": 'darkcyan'
       },
       boxShadow:{
         'shad':' 10px 6px 7px 2px rgba(0, 0, 0, 0.5)'

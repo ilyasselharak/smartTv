@@ -1,9 +1,7 @@
 import { initMongoose } from "@/lib/mongoose";
 import Order from "@/modules/Order";
-import { useRouter } from "next/router";
 
 export default async function handle(req, res) {
-  const router = useRouter();
   await initMongoose();
   if (req.method !== "POST") {
     res.json("should a post but its not");
@@ -21,5 +19,5 @@ export default async function handle(req, res) {
     paid: 1,
   });
   order.save();
-  router.push("/success");
+  return res.redirect(307, '/success')
 }

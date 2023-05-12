@@ -282,7 +282,8 @@ export default function Home({ packages }) {
         >
           {packages?.map((item) => {
             return (
-              <SwiperSlide>
+              
+              <SwiperSlide key={item._id}>
                 <Product
                   className="w-[50%]"
                   key={item._id}

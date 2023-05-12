@@ -14,7 +14,6 @@ const Footer = (data) => {
     autoClose: 2000,
     hideProgressBar: false,
     closeOnClick: true,
-    
     });
 
 
