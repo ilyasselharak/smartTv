@@ -66,9 +66,9 @@ export default function Home({ packages }) {
           pagination={{
             clickable: true,
           }}
-          navigation={true}
+          
           slidesPerView={1}
-          modules={[Autoplay, Pagination, Navigation]}
+          modules={[Autoplay, Pagination]}
         >
           <SwiperSlide>
             <div className=" bg2 h-[500px] xl:h-[700px] bg-cover bg-center">
@@ -261,7 +261,7 @@ export default function Home({ packages }) {
         </div>
 
         <div className=" pl-4 text-center text-xl border border-black p-4 m-4 rounded-md">
-          <span className="text-rose-400 pr-4">DISCOUNT: </span>
+          <span className="text-rose-700  text-xl font-bold pr-4">DISCOUNT: </span>
           {days}DAYS:{hours}HOURS:{minutes}MINUTES
         </div>
 
@@ -296,11 +296,11 @@ export default function Home({ packages }) {
           })}
         </Swiper>
         <ToastContainer />
-        <div>
+        {/* <div>
           <div className="text-red-700 text-center text-4xl py-6" id="price">
             Methods
-          </div>
-          <Swiper
+          </div> */}
+          {/* <Swiper
             style={{ "z-index": "0" }}
             autoplay={{
               delay: 2000,
@@ -343,7 +343,9 @@ export default function Home({ packages }) {
               <Image src="/giropay.png" alt="giro pay" width={70} height={70} />
             </SwiperSlide>
           </Swiper>
-        </div>
+          </div>
+         */}
+         
         <div className="grid my-12 md:grid-cols-2 gap-x-12 grid-cols-1 md:px-52 sm:px-48 xl:px-72 py-4 2xl:px-80 lg:px-64 px-32">
           <div className="flex flex-col gap-4 mb-12">
             <div className="text-red-700 text-4xl py-4">
