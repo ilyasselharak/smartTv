@@ -88,7 +88,7 @@ export default function CheckoutPage() {
             >
               <PayPalButtons
                 style={{
-                  color: "silver",
+                  
                   layout: "vertical",
                   shape: "pill",
                 }}
@@ -123,6 +123,9 @@ export default function CheckoutPage() {
               </div>
               <div>
                 <span className=" text-white font-bold">BIC:</span> REVOLT21
+              </div>
+              <div>
+                <span className=" text-white font-bold">Amount:</span> €{total}
               </div>
             </div>
           </div>
@@ -209,6 +212,7 @@ export default function CheckoutPage() {
             <div className="w-[50%] flex gap-2">
               <input
                 type="checkbox"
+                className="w-6"
                 checked={selectedOption === "Bank"}
                 onChange={() => handleCheckboxChange("Bank")}
                 name="bank"
@@ -219,6 +223,7 @@ export default function CheckoutPage() {
             <div className="w-[50%] flex gap-2">
               <input
                 type="checkbox"
+                className="w-6"
                 checked={selectedOption === "paypal"}
                 onChange={() => handleCheckboxChange("paypal")}
                 name="paypal"
@@ -229,6 +234,7 @@ export default function CheckoutPage() {
             <div className="w-[50%] flex gap-2">
               <input
                 type="checkbox"
+                className="w-6"
                 checked={selectedOption === "crypto"}
                 onChange={() => handleCheckboxChange("crypto")}
                 name="crypto"
@@ -237,9 +243,10 @@ export default function CheckoutPage() {
               <label htmlFor="crypto">Crypto Currency:</label>
             </div>
           </div>
-          <div className="flex items-end sm:flex-col">
-            <div className="w-[50%]">
+          <div className="flex sm:items-end flex-col sm:flex-row">
+            <div className="w-[100%] sm:w-[50%]">
               <div className="text-2xl font-bold mt-8">Your Order</div>
+              <div className="flex flex-wrap flex-row">
               {packagesInfos.length
                 ? packagesInfos.map((packageInfo) => {
                     return (
@@ -252,7 +259,7 @@ export default function CheckoutPage() {
                             {packageInfo.name}
                           </h3>
                           <div className="flex mt-1 gap-2">
-                            <div className="grow font-bold">
+                            <div className="grow font-bold text-black">
                               €{packageInfo.Price}
                             </div>
                             <div>
@@ -288,8 +295,9 @@ export default function CheckoutPage() {
                     );
                   })
                 : ""}
+                </div>
             </div>
-            <div className="font-bold text-2xl">Total: €{total}</div>
+            <div className="font-bold text-2xl text-black text-end sm:w-[50%]">Total: <span className="text-white"> €{total}</span></div>
           </div>
           {selectedOption !== "" && displayed()}
         </form>
