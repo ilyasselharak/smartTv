@@ -33,9 +33,9 @@ const Product = ({ name, Price, _id }) => {
         key={_id}
         className="bg-red-800 text-white shadow-shad text-center rounded-lg py-2 pb-4 "
       >
-        <div className=" border-b-2 p-2 border-red-200 bg-darkCyan">
-          <h1 className="text-2xl">{name}</h1>
-          <p>Sports, News, Series, Movies, Cartons</p>
+        <div className=" border-b-2 p-2 text-black border-red-200 bg-darkCyan">
+          <h1 className="text-2xl font-bold">{name}</h1>
+          <p className=" font-bold mt-3">Sports, News, Series, Movies, Cartons</p>
         </div>
 
         <h1 className="py-2 border-b border-gray-500 w-[80%] m-auto text-xl">
