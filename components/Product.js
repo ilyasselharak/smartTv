@@ -19,12 +19,8 @@ const Product = ({ name, Price, _id }) => {
 
   const addPackage = () => {
     setSelectedPackages((prev) => [...prev, _id]);
-    toast(`🦄 ${name} added to Card!`, {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-    });
+    
+    
   };
 
   return (
@@ -39,7 +35,7 @@ const Product = ({ name, Price, _id }) => {
         </div>
 
         <h1 className="py-2 border-b border-gray-500 w-[80%] m-auto text-xl">
-          <span className="text-black">
+          <span className="text-black font-medium">
             <del>{(Price + Price * 0.2).toFixed(2)} €</del>
           </span>{" "}
           {Price} €
@@ -56,12 +52,12 @@ const Product = ({ name, Price, _id }) => {
           <p>100% Stable Server</p>
           <p>Fast Delivery</p>
         </div>
-        <button
+        <Link href={"/checkout"}
           onClick={addPackage}
-          className="bg-cyan-500 shadow-lg shadow-cyan-500/50 text-white p-2 rounded-md hover:shadow-indigo-500/40"
+          className="bg-cyan-500 w-[150px] tracking-[.4em] shadow-lg font-medium shadow-cyan-500/50 text-white p-2 rounded-md hover:text-xl hover:shadow-indigo-500/40"
         >
-          Add to Cart
-        </button>
+          Check
+        </Link>
       </div>
     </div>
   );

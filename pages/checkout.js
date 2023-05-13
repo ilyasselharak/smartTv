@@ -5,6 +5,8 @@ import { useContext, useEffect, useState } from "react";
 import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 import Pay from "@/components/Pay";
 import Head from "next/head";
+
+
 import axios from "axios";
 export default function CheckoutPage() {
 

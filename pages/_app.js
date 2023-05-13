@@ -9,13 +9,13 @@ export default function App({ Component, pageProps }) {
 
       <CookieConsent
         debug={true}
-        style={{ background: "rgb(220 38 38)", opacity:"0.7"}}
+        style={{ background: "rgb(220 38 38)", opacity:"0.9"}}
         buttonStyle={{ borderRadius: "10px" }}
         buttonText="That Fine!"
       >
-        <div className="text-center">
+        <div className="text-center font-medium">
           This Website Uses Cookies See Our{" "}
-          <Link href="/privacy-policy">Privacy Policy</Link> for More
+          <Link href="/privacy-policy" className="text-blue-700 text-xl">Privacy Policy</Link> for More
         </div>
       </CookieConsent>
     </PackagesContextProvider>
