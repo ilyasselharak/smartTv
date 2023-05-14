@@ -31,9 +31,9 @@ const Header = () => {
       </div></Link>
       <div className=' flex gap-2 justify-around absolute right-8 top-6 md:hidden'>
       <div className='block md:hidden text-red-600'>
-      </div>
+      
       <Link href={'/checkout'} className={`${(path==='/checkout'?'text-black  border-red-300 border-b':'hover:text-black  ')} text-xl duration-500 flex items-center gap-2  `}><FaShoppingCart/> {selectedPackages.length}</Link>  
-
+      </div>
       <div onClick={()=>setOpen(!open)} className='text-black text-3xl  cursor-pointer '>
            {open ? <AiOutlineClose/> : <FiMenu/>}
       </div>
@@ -46,7 +46,7 @@ const Header = () => {
         <li className={`md:ml-8 md:my-0 text-red-400 my-7 `}><Link onClick={()=>setOpen(!open)} href={'/'} className={`${(path==='/business'?'text-black text-xl border-red-300 border-b':'')} duration-500   `}>BUSINESS</Link></li>
         
       </ul>
-      <li className={`md:ml-8 md:my-0 my-7 ${open ? 'hover:border-b hover:border-red-300 hover:text-xl':''}`}><Link onClick={()=>setOpen(!open)} href={'/checkout'} className={`${(path==='/checkout'?'text-black hidden text-xl border-red-300 border-b':'hover:text-black  ')} duration-500 flex items-center gap-2  `}><FaShoppingCart/> {selectedPackages.length}</Link></li>
+      <span className={`md:ml-8 md:my-0 my-7 ${open ? 'hover:border-b hover:border-red-300 hover:text-xl':''}`}><Link onClick={()=>setOpen(!open)} href={'/checkout'} className={`${(path==='/checkout'?'text-black hidden text-xl border-red-300 border-b':'hover:text-black  ')} duration-500 flex items-center gap-2  `}><FaShoppingCart/> {selectedPackages.length}</Link></span>
       </div>
       </div>
       )
