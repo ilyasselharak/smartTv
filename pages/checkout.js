@@ -115,7 +115,7 @@ export default function CheckoutPage() {
       case "Bank":
         return (
           <div className="flex justify-center text-2xl mt-6">
-            <div className="text-black">
+            <div className="text-green-600">
               <div>
                 <span className="text-white font-bold">Currency:</span> EUR
               </div>
