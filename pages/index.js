@@ -164,7 +164,7 @@ export default function Home({ packages }) {
         className="mySwiper sticker w-[300px] h-[230px] sm:w-[500px] sm:h-[300px] mt-8"
         modules={[EffectCards]}>
         {movie.map(item => (
-          <SwiperSlide>
+          <SwiperSlide key={item.id}>
           <div className="text-black"><Image alt={item.title}  src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`} className="w-[500px]" fill/></div>
           </SwiperSlide>
         ))}
