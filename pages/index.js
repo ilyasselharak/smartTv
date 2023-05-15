@@ -157,13 +157,15 @@ export default function Home({ packages }) {
           </div>
         </div>
         <Swiper 
+          style={{ "zIndex": "0",}}
+
         effect={"cards"}
         grabCursor={true}
-        className="mySwiper sticker w-[500px] mt-6"
+        className="mySwiper sticker w-[300px] h-[230px] sm:w-[500px] sm:h-[300px] mt-8"
         modules={[EffectCards]}>
         {movie.map(item => (
           <SwiperSlide>
-          <div className="text-black"><Image src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`} width={500} height={500}/></div>
+          <div className="text-black"><Image  src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`} className="w-[500px]" fill/></div>
           </SwiperSlide>
         ))}
         </Swiper>
