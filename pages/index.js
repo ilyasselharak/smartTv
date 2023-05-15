@@ -66,10 +66,10 @@ export default function Home({ packages }) {
         />
       </Head>
       <Header />
-      <div className="top-20 sm:w-[730px] xl:w-full md:w-full 2xl:w-ful lg:w-full w-[900px] xl:top- right-0 relative">
+      <div className="top-20 sm:w-[730px] xl:w-full md:w-full 2xl:w-ful lg:w-full w-[750px] xl:top- right-0 relative">
         <Swiper
           style={{ "zIndex": "0", }}
-          className="h-[675px]"
+          className="h-[469px] xl:h-[600px]"
           autoplay={{
             delay: 6000,
             disableOnInteraction: false,
