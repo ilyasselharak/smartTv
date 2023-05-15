@@ -15,6 +15,7 @@ import Product from "@/components/Product";
 import Link from "next/link";
 import Head from "next/head";
 import { ToastContainer } from "react-toastify";
+import axios from "axios";
 
 export default function Home({ packages }) {
   
@@ -23,6 +24,9 @@ export default function Home({ packages }) {
   const [minutes, setMinutes] = useState(0);
 
   useEffect(() => {
+    axios.get(`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.MOVIE_API}&language=en-US`)
+   .then(res=>console.log(res.data))
+   .catch(err=>console.log(err))
     const interval = setInterval(() => {
       const target = new Date("05/18/2023 22:59:59");
       const now = new Date();
@@ -147,6 +151,9 @@ export default function Home({ packages }) {
             shop IPTV now, and enjoy with our server.
           </div>
         </div>
+        <Swiper>
+
+        </Swiper>
         <div className=" grid justify-around gap-3 text-lg text-center xl:grid-cols-3 sm:grid-cols-2 xl:px-72 sm:32 py-16">
           <div className="flex flex-col items-center justify-center">
             <Image
@@ -492,6 +499,7 @@ export default function Home({ packages }) {
 export async function getServerSideProps() {
   await initMongoose();
   const packages = await findAllPackages();
+  
   return {
     props: {
       packages: JSON.parse(JSON.stringify(packages)),
