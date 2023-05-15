@@ -3,6 +3,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import "swiper/css/navigation";
 import "swiper/css";
+import "swiper/css/effect-cards";
+import { EffectCards } from "swiper";
+
 import Image from "next/image";
 import { MdBackup, MdOutlineSupportAgent } from "react-icons/md";
 import { BsFillCloudDownloadFill } from "react-icons/bs";
@@ -22,10 +25,12 @@ export default function Home({ packages }) {
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
+  const [movie, setMovie] = useState([]);
+  
 
   useEffect(() => {
-    axios.get(`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.MOVIE_API}&language=en-US`)
-   .then(res=>console.log(res.data))
+    axios.get(`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.NEXT_PUBLIC_MOVIE_API}&language=en-US`)
+   .then(res=>setMovie(res.data.results))
    .catch(err=>console.log(err))
     const interval = setInterval(() => {
       const target = new Date("05/18/2023 22:59:59");
@@ -63,7 +68,7 @@ export default function Home({ packages }) {
       <Header />
       <div className="top-20 sm:w-[730px] xl:w-full md:w-full 2xl:w-ful lg:w-full w-[600px] xl:top- right-0 relative">
         <Swiper
-          style={{ "z-index": "0" }}
+          style={{ "zIndex": "0" }}
           autoplay={{
             delay: 6000,
             disableOnInteraction: false,
@@ -151,8 +156,16 @@ export default function Home({ packages }) {
             shop IPTV now, and enjoy with our server.
           </div>
         </div>
-        <Swiper>
-
+        <Swiper 
+        effect={"cards"}
+        grabCursor={true}
+        className="mySwiper sticker w-[500px] mt-6"
+        modules={[EffectCards]}>
+        {movie.map(item => (
+          <SwiperSlide>
+          <div className="text-black"><Image src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`} width={500} height={500}/></div>
+          </SwiperSlide>
+        ))}
         </Swiper>
         <div className=" grid justify-around gap-3 text-lg text-center xl:grid-cols-3 sm:grid-cols-2 xl:px-72 sm:32 py-16">
           <div className="flex flex-col items-center justify-center">
@@ -274,7 +287,7 @@ export default function Home({ packages }) {
         </div>
 
         <Swiper
-          style={{ "z-index": "0", "padding":"0 12px"}}
+          style={{ "zIndex": "0", "padding":"0 12px"}}
           autoplay={{
             delay: 4000,
             disableOnInteraction: false,
@@ -309,7 +322,7 @@ export default function Home({ packages }) {
             Methods
           </div> */}
           {/* <Swiper
-            style={{ "z-index": "0" }}
+            style={{ "zIndex": "0" }}
             autoplay={{
               delay: 2000,
               disableOnInteraction: false,
@@ -460,7 +473,7 @@ export default function Home({ packages }) {
           </div>
         </div>
         <Swiper
-          style={{ "z-index": "0" }}
+          style={{ "zIndex": "0" }}
           spaceBetween={20}
           slidesPerView={4}
           autoplay={{

@@ -2,7 +2,7 @@ import { initMongoose } from '@/lib/mongoose';
 import Order from '@/modules/Order';
 import { Client, Webhook } from 'coinbase-commerce-node';
 
-Client.init(process.env.COINBASE_API_KEY);
+Client.init(process.env.NEXT_PUBLIC_COINBASE_API_KEY);
 
 export default async function coinVerifyRoute(req, res) {
 
@@ -10,7 +10,7 @@ export default async function coinVerifyRoute(req, res) {
 
         const rawBody = JSON.stringify(req.body)
         const signature = String(req.headers['x-cc-webhook-signature']);
-        const webhookSecret = String(process.env.COINBASE_SECRET_KEY);
+        const webhookSecret = String(process.env.NEXT_PUBLIC_COINBASE_SECRET_KEY);
         const event = Webhook.verifyEventBody(rawBody, signature, webhookSecret);
 
         console.log(event)

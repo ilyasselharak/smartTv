@@ -1,6 +1,6 @@
 import { Client, resources } from 'coinbase-commerce-node';
 
-Client.init(process.env.COINBASE_API_KEY);
+Client.init(process.env.NEXT_PUBLIC_COINBASE_API_KEY);
 const { Charge } = resources;
 
 const coinInitRoute = async(req, res) => {

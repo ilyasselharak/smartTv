@@ -84,7 +84,7 @@ export default function CheckoutPage() {
           <div className="text-center mt-6">
             <PayPalScriptProvider
               options={{
-                "client-id":"AfhkCQXJACV0EzlNmb2kDGuapZhcT-8QrtovwilMr9SnNq-I5_xMJBtw3qbN9gBvcduSy9s-UXGsO1EY",
+                "client-id":process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
                 currency: "EUR",
               }}
             >
