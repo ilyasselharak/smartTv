@@ -68,7 +68,8 @@ export default function Home({ packages }) {
       <Header />
       <div className="top-20 sm:w-[730px] xl:w-full md:w-full 2xl:w-ful lg:w-full w-[600px] xl:top- right-0 relative">
         <Swiper
-          style={{ "zIndex": "0" }}
+          style={{ "zIndex": "0", }}
+          className="h-[500px] xl:h-[700px]"
           autoplay={{
             delay: 6000,
             disableOnInteraction: false,
@@ -81,8 +82,8 @@ export default function Home({ packages }) {
           modules={[Autoplay, Pagination]}
         >
           <SwiperSlide>
-            <div className=" bg2 h-[500px] xl:h-[700px] bg-cover bg-center">
-              <div className="text-white xl:w-[60%] xl:pt-[9%] sm:pt-[12%] pt-[13%] pl-[4%]">
+           <Image src='/bg2.jpg' fill/>
+              <div className="text-white xl:w-[60%] absolute z-10 xl:pt-[9%] sm:pt-[12%] pt-[13%] pl-[4%]">
                 <h1 className="pb-2 border-b border-red-500 w-fit mb-2">
                   BEST IPTV PROVIDER
                 </h1>
@@ -98,11 +99,11 @@ export default function Home({ packages }) {
                   Shop IPTV
                 </Link>
               </div>
-            </div>
+            
           </SwiperSlide>
            <SwiperSlide>
-            <div className="h-[500px] bg1 xl:h-[700px] bg-cover bg-center">
-              <div className="text-white xl:w-[60%] xl:pt-[9%] sm:pt-[12%] pt-[13%] pl-[4%]">
+            <Image src='/bg1.jpg' fill/>
+              <div className="text-white xl:w-[60%] xl:pt-[9%] absolute z-10 sm:pt-[12%] pt-[13%] pl-[4%]">
                 <h1 className="pb-2 border-b border-red-500 w-fit mb-2">
                   INSTANT ACTIVATION
                 </h1>
@@ -119,7 +120,7 @@ export default function Home({ packages }) {
                 </Link>
                 
               </div>
-            </div>
+            
           </SwiperSlide> 
           {/* <SwiperSlide>
             <div className="h-[500px] bg3  xl:h-[700px] bg-cover bg-center">
