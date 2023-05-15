@@ -36,7 +36,7 @@ const Product = ({ name, Price, _id }) => {
 
         <h1 className="py-2 border-b border-gray-500 w-[80%] m-auto text-xl">
           <span className="text-black font-medium">
-            <del>{(Price + Price * 0.2).toFixed(2)} €</del>
+            <u>{(Price + Price * 0.2).toFixed(2)} €</u>
           </span>{" "}
           {Price} €
         </h1>

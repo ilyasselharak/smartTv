@@ -165,7 +165,7 @@ export default function Home({ packages }) {
         modules={[EffectCards]}>
         {movie.map(item => (
           <SwiperSlide>
-          <div className="text-black"><Image  src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`} className="w-[500px]" fill/></div>
+          <div className="text-black"><Image alt={item.title}  src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`} className="w-[500px]" fill/></div>
           </SwiperSlide>
         ))}
         </Swiper>
