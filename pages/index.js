@@ -82,7 +82,7 @@ export default function Home({ packages }) {
           modules={[Autoplay, Pagination]}
         >
           <SwiperSlide>
-           <Image src='/bg2.jpg' fill/>
+           <Image src='/bg2.jpg' alt="netflix" fill/>
               <div className="text-white xl:w-[60%] absolute z-10 xl:pt-[9%] sm:pt-[12%] pt-[13%] pl-[4%]">
                 <h1 className="pb-2 border-b border-red-500 w-fit mb-2">
                   BEST IPTV PROVIDER
@@ -102,7 +102,7 @@ export default function Home({ packages }) {
             
           </SwiperSlide>
            <SwiperSlide>
-            <Image src='/bg1.jpg' fill/>
+            <Image src='/bg1.jpg' alt="sport" fill/>
               <div className="text-white xl:w-[60%] xl:pt-[9%] absolute z-10 sm:pt-[12%] pt-[13%] pl-[4%]">
                 <h1 className="pb-2 border-b border-red-500 w-fit mb-2">
                   INSTANT ACTIVATION
