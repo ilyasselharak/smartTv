@@ -34,9 +34,9 @@ const Product = ({ name, Price, _id }) => {
           <p className=" font-bold mt-3">Sports, News, Series, Movies, Cartons</p>
         </div>
 
-        <h1 className="py-2 border-b border-gray-500 w-[80%] m-auto text-xl">
-          <span className="text-black font-medium">
-            <u>{(Price + Price * 0.2).toFixed(2)} €</u>
+        <h1 className="py-2 border-b border-gray-500 w-[80%] m-auto text-2xl">
+          <span className="text-black text-sm font-bold">
+            {(Price + Price * 0.2).toFixed(2)} €
           </span>{" "}
           {Price} €
         </h1>
