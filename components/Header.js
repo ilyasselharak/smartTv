@@ -25,10 +25,13 @@ const Header = () => {
     return (
 <div className={` ${(path==='/checkout'?'':'fixed  ')} duration-500   top-0 shadow-shad left-0 z-[1] w-full`}>
     <div className='md:flex items-center bg-white border-b py-4 border-red-400 justify-around'>
-    <Link href="/">
-    <div className='flex text-black text-2xl ml-2 items-center'>
+      <div className="w-fit">
+    <Link href="/" >
+      <div className='flex text-black text-2xl ml-2 items-center'>
         IP<Image src="/logo.png" alt="logo iptv" width={70} height={70}/>
-      </div></Link>
+      </div>
+    </Link>
+    </div>
       <div className=' flex gap-2 justify-between w-full absolute right-8 top-8 md:hidden'>
       <div className="w-[70px]"></div>
       <div className='block md:hidden text-red-600'>
