@@ -32,7 +32,7 @@ const Header = () => {
       <div className=' flex gap-2 justify-around absolute right-8 top-6 md:hidden'>
       <div className='block md:hidden text-red-600'>
       
-      <Link href={'/checkout'} className={`${(path==='/checkout'?'text-black  border-red-300 border-b':'hover:text-black  ')} text-xl duration-500 flex items-center gap-2  `}><FaShoppingCart width={60}/> {selectedPackages.length}</Link>  
+      <Link href={'/checkout'} className={`${(path==='/checkout'?'text-black  border-red-300 border-b':'hover:text-black  ')} text-xl duration-500 flex gap-2  `}><FaShoppingCart height={48} width={48}/> {selectedPackages.length}</Link>  
       </div>
       <div onClick={()=>setOpen(!open)} className='text-black text-3xl  cursor-pointer '>
            {open ? <AiOutlineClose/> : <FiMenu/>}
