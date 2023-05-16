@@ -299,7 +299,7 @@ export default function CheckoutPage() {
                 : ""}
                 </div>
             </div>
-            <div className="font-bold text-2xl text-black text-end sm:w-[50%]">Total: <span className="text-white"> €{total}</span></div>
+            <div className="font-bold text-2xl bg-emerald-500 text-end sm:w-[50%]">Total: <span className="text-white"> €{total}</span></div>
           </div>
           {selectedOption !== "" && displayed()}
         </form>
@@ -308,7 +308,7 @@ export default function CheckoutPage() {
                 Important By purchasing our product you are accepting
                 automatically our{" "}
                 <button
-                  className="text-red-700 text-xl font-bold hover:underline"
+                  className="bg-emerald-500 text-xl font-bold hover:underline"
                   onClick={() => setPay(!pay)}
                 >
                   Refund Policy
