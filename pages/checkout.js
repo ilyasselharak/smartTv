@@ -308,7 +308,7 @@ export default function CheckoutPage() {
                 Important By purchasing our product you are accepting
                 automatically our{" "}
                 <button
-                  className="text-blue-700 hover:underline"
+                  className="text-red-700 text-xl font-bold hover:underline"
                   onClick={() => setPay(!pay)}
                 >
                   Refund Policy

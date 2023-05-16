@@ -40,10 +40,10 @@ const Header = () => {
       
       </div>
      <ul id="navbar" className={`md:flex bg-white text-red-600 md:items-center md:pb-0 pb-12 absolute md:static md:z-auto z-[5] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20':'top-[-412px]'}`}>
-        <li className={`md:ml-8 md:my-0 my-7 ${open ? 'hover:border-b hover:border-red-300 hover:text-xl':''}`}><Link href={'/'} className={`${(path==='/'?'text-black text-xl border-red-300 border-b':'hover:text-black ')} duration-500   `}>HOME</Link></li>
-        <li className={`md:ml-8 md:my-0 my-7 ${open ? 'hover:border-b hover:border-red-300 hover:text-xl':''}`}><Link scroll={false} onClick={()=>setOpen(!open)} href={'/#price'} className={`${(path==='/#price'?'text-black text-xl border-red-300 border-b':'hover:text-black  ')} duration-500   `} >PRICING</Link></li>
-        <li className={`md:ml-8 md:my-0 my-7 ${open ? 'hover:border-b hover:border-red-300 hover:text-xl':''}`}><Link onClick={()=>setOpen(!open)}  href={'/contactus'} className={`${(path==='/contactus'?'text-black text-xl border-red-300 border-b':'hover:text-black  ')} duration-500   `}>CONTACTUS</Link></li>
-        <li className={`md:ml-8 md:my-0 text-red-400 my-7 `}><Link onClick={()=>setOpen(!open)} href={'/'} className={`${(path==='/business'?'text-black text-xl border-red-300 border-b':'')} duration-500   `}>BUSINESS</Link></li>
+        <li className={`md:ml-8 md:my-0 my-7 font-bold ${open ? 'hover:border-b hover:border-red-300 hover:text-xl':''}`}><Link href={'/'} className={`${(path==='/'?'text-black text-xl border-red-300 border-b':'hover:text-black ')} duration-500   `}>HOME</Link></li>
+        <li className={`md:ml-8 md:my-0 my-7 font-bold ${open ? 'hover:border-b hover:border-red-300 hover:text-xl':''}`}><Link scroll={false} onClick={()=>setOpen(!open)} href={'/#price'} className={`${(path==='/#price'?'text-black text-xl border-red-300 border-b':'hover:text-black  ')} duration-500   `} >PRICING</Link></li>
+        <li className={`md:ml-8 md:my-0 my-7 font-bold ${open ? 'hover:border-b hover:border-red-300 hover:text-xl':''}`}><Link onClick={()=>setOpen(!open)}  href={'/contactus'} className={`${(path==='/contactus'?'text-black text-xl border-red-300 border-b':'hover:text-black  ')} duration-500   `}>CONTACTUS</Link></li>
+        <li className={`md:ml-8 md:my-0 font-bold text-red-400 my-7 `}><Link onClick={()=>setOpen(!open)} href={'/'} className={`${(path==='/business'?'text-black text-xl border-red-300 border-b':'')} duration-500   `}>BUSINESS</Link></li>
         
       </ul>
       <span className={`md:ml-8 md:my-0 hidden sm:block my-7 ${open ? 'hover:border-b hover:border-red-300 hover:text-xl':''}`}><Link onClick={()=>setOpen(!open)} href={'/checkout'} className={`${(path==='/checkout'?'text-black hidden text-xl border-red-300 border-b':'hover:text-black  ')} duration-500 flex items-center gap-2  `}><FaShoppingCart/> {selectedPackages.length}</Link></span>
