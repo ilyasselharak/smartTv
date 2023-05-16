@@ -26,15 +26,14 @@ const Header = () => {
 <div className={` ${(path==='/checkout'?'':'fixed  ')} duration-500   top-0 shadow-shad left-0 z-[1] w-full`}>
     <div className='md:flex items-center bg-white border-b py-4 border-red-400 justify-around'>
     <Link href="/">
-      <div className='flex text-black text-2xl ml-2 items-center'>
+    <div className='flex text-black text-2xl ml-2 items-center'>
         IP<Image src="/logo.png" alt="logo iptv" width={70} height={70}/>
       </div></Link>
+      <div className=' flex gap-2 justify-around absolute right-8 top-6 md:hidden'>
       <div className='block md:hidden text-red-600'>
       
       <Link href={'/checkout'} className={`${(path==='/checkout'?'text-black  border-red-300 border-b':'hover:text-black  ')} text-xl duration-500 flex gap-2  `}><FaShoppingCart height={48} width={48}/> {selectedPackages.length}</Link>  
       </div>
-      <div className=' flex gap-2 justify-around absolute right-8 top-6 md:hidden'>
-      
       <div onClick={()=>setOpen(!open)} className='text-black text-3xl  cursor-pointer '>
            {open ? <AiOutlineClose/> : <FiMenu/>}
       </div>
@@ -47,7 +46,7 @@ const Header = () => {
         <li className={`md:ml-8 md:my-0 font-bold text-red-400 my-7 `}><Link onClick={()=>setOpen(!open)} href={'/'} className={`${(path==='/business'?'text-black text-xl border-red-300 border-b':'')} duration-500   `}>BUSINESS</Link></li>
         
       </ul>
-      <span className={`md:ml-8 md:my-0 hidden sm:block my-7 ${open ? 'hover:border-b hover:border-red-300 hover:text-xl':''}`}><Link onClick={()=>setOpen(!open)} href={'/checkout'} className={`${(path==='/checkout'?'text-black hidden text-xl border-red-300 border-b':'hover:text-black  ')} duration-500 flex  gap-2  `}><FaShoppingCart  height={48} width={48}/> {selectedPackages.length}</Link></span>
+      <span className={`md:ml-8 md:my-0 hidden sm:block my-7 ${open ? 'hover:border-b hover:border-red-300 hover:text-xl':''}`}><Link onClick={()=>setOpen(!open)} href={'/checkout'} className={`${(path==='/checkout'?'text-black hidden text-xl border-red-300 border-b':'hover:text-black  ')} duration-500 flex  gap-2  `}><FaShoppingCart/> {selectedPackages.length}</Link></span>
       </div>
       </div>
       )
