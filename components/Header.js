@@ -46,7 +46,7 @@ const Header = () => {
         <li className={`md:ml-8 md:my-0 font-bold text-red-400 my-7 `}><Link onClick={()=>setOpen(!open)} href={'/'} className={`${(path==='/business'?'text-black text-xl border-red-300 border-b':'')} duration-500   `}>BUSINESS</Link></li>
         
       </ul>
-      <span className={`md:ml-8 md:my-0 hidden sm:block my-7 ${open ? 'hover:border-b hover:border-red-300 hover:text-xl':''}`}><Link onClick={()=>setOpen(!open)} href={'/checkout'} className={`${(path==='/checkout'?'text-black hidden text-xl border-red-300 border-b':'hover:text-black  ')} duration-500 flex items-center gap-2  `}><FaShoppingCart/> {selectedPackages.length}</Link></span>
+      <span className={`md:ml-8 md:my-0 hidden sm:block my-7 ${open ? 'hover:border-b hover:border-red-300 hover:text-xl':''}`}><Link onClick={()=>setOpen(!open)} href={'/checkout'} className={`${(path==='/checkout'?'text-black hidden text-xl border-red-300 border-b':'hover:text-black  ')} duration-500 flex  gap-2  `}><FaShoppingCart  height={48} width={48}/> {selectedPackages.length}</Link></span>
       </div>
       </div>
       )
