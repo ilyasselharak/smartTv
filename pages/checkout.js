@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 import Pay from "@/components/Pay";
 import Head from "next/head";
-
+import { PayPalButton } from "react-paypal-button-v2";
 
 import axios from "axios";
 export default function CheckoutPage() {
@@ -88,7 +88,7 @@ export default function CheckoutPage() {
       case "paypal":
         return (
           <div className="text-center mt-6">
-            <PayPalScriptProvider
+            {/* <PayPalScriptProvider
               options={{
                 "client-id":process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
                 currency: "EUR",
@@ -115,7 +115,20 @@ export default function CheckoutPage() {
                   });
                 }}
               />
-            </PayPalScriptProvider>
+            </PayPalScriptProvider> */}
+            <PayPalButton
+        amount={localStorage.getItem("price")}
+        // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+        onSuccess={(details, data) => {
+          document.querySelector('#payment-form').submit();
+        }}
+        
+        options={{
+          clientId: process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
+          currency:"EUR",
+        
+        }}
+      />
           </div>
         );
       case "Bank":

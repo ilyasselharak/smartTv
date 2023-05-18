@@ -1,5 +1,6 @@
 import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 import {  useRouter } from "next/router";
+import { PayPalButton } from "react-paypal-button-v2/dist";
 
 const Product = ({ name, Price, _id }) => {
     const rout = useRouter();
@@ -33,7 +34,7 @@ const Product = ({ name, Price, _id }) => {
         </div>
         <div className="w-[80%] m-auto">
         
-        <PayPalScriptProvider 
+        {/* <PayPalScriptProvider 
               options={{
                 "client-id":process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
                 currency: "EUR",
@@ -61,7 +62,20 @@ const Product = ({ name, Price, _id }) => {
                   });
                 }}
               />
-            </PayPalScriptProvider>
+            </PayPalScriptProvider> */}
+             <PayPalButton
+        amount={Price}
+        // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+        onSuccess={(details, data) => {
+            rout.push("/success")
+        }}
+        
+        options={{
+          clientId: process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
+          currency:"EUR",
+        
+        }}
+      />
             </div>
       </div>
     </div>
