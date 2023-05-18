@@ -1,6 +1,6 @@
 import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 import {  useRouter } from "next/router";
-import { PayPalButton } from "react-paypal-button-v2/dist";
+import { PayPalButton } from "react-paypal-button-v2";
 
 const Product = ({ name, Price, _id }) => {
     const rout = useRouter();
