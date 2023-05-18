@@ -1,10 +1,11 @@
+import Order from '@/modules/Order';
 import { Client, resources } from 'coinbase-commerce-node';
 
 Client.init(process.env.NEXT_PUBLIC_COINBASE_API_KEY);
 const { Charge } = resources;
 
 const coinInitRoute = async(req, res) => {
-    const { price, name,id } = req.body;
+    const { price, name,id,email,phone,packages } = req.body;
   try {
     const chargeData = {
       name: name,
@@ -21,7 +22,17 @@ const coinInitRoute = async(req, res) => {
     };
   
     const charge = await Charge.create(chargeData);
+    const order = await Order.create({
+     
+      packages:packages,
+      name: name,
+      email: email,
+      phone: phone,
 
+      method: "Crypto",
+      paid: 0,
+    });
+    order.save();
     res.send(charge);
   
   } catch (e) {

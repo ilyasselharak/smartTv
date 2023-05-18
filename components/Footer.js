@@ -55,7 +55,7 @@ const Footer = (data) => {
             <Link href={"/contactus"}>CONTACTUS</Link>
           </p>
           <p className="h-12">
-            <Link href={"/"}>BUSINESS</Link>
+            <Link href={"/buisness"}>BUSINESS</Link>
           </p>
           <p className="h-12">
             <Link href={"/checkout"}>CART</Link>

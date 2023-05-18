@@ -1,19 +1,20 @@
 import { initMongoose } from "@/lib/mongoose";
 import Order from "@/modules/Order";
 
+
 export default async function handle(req, res) {
+
   await initMongoose();
   if (req.method !== "POST") {
     res.json("should a post but its not");
     return;
   }
-  const { email, name, address, city, phone } = req.body;
+  const { email, name, price, phone,packages } = req.body;
   const order = await Order.create({
-    products: ["ilyass"],
+    packages: packages,
     name: name,
+    price: price,
     email: email,
-    address: address,
-    city: city,
     phone: phone,
     method: "paypal",
     paid: 1,

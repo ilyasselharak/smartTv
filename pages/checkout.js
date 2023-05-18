@@ -13,6 +13,8 @@ export default function CheckoutPage() {
   const { selectedPackages, setSelectedPackages } = useContext(PackagesContext);
   const [packagesInfos, setPackagesInfos] = useState([]);
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [pay, setPay] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
 
@@ -67,8 +69,12 @@ export default function CheckoutPage() {
     try {
       const data = await axios.post("/api/init", {
         id: selectedPackages[0]._id,
+        packages:selectedPackages,
         price: total,
         name: name,
+        email: email,
+        phone:phone,
+       
       });
       setLoading(false);
       window.open(data.data.hosted_url, "_blank");
@@ -183,6 +189,8 @@ export default function CheckoutPage() {
         <form className="mt-5" id="payment-form" method="POST" action="/api/paypalCheck">
           <div className="flex flex-col sm:flex-row gap-6">
             <div className="flex flex-col sm:w-[50%] ">
+              <input className="hidden" value={total} type="text" name="price" id="price"/>
+              <input className="hidden" value={selectedPackages} type="text" name="packages" id="packages"/>
               <label htmlFor="name">Full Name:</label>
               <input
                 className="text-black mt-1 p-2"
@@ -197,6 +205,9 @@ export default function CheckoutPage() {
             <div className="flex flex-col sm:w-[50%]">
               <label htmlFor="phone">Number Phone:</label>
               <input
+              onChange={(e) => {
+                setPhone(e.target.value);
+              }}
                 className="text-black mt-1 p-2"
                 type="tel"
                 name="phone"
@@ -207,7 +218,9 @@ export default function CheckoutPage() {
           </div>
           <div className="flex flex-col mt-6">
             <label htmlFor="email">Email:</label>
-            <input className="p-2 mt-1 text-black" type="email" name="email" id="email" />
+            <input className="p-2 mt-1 text-black" onChange={(e) => {
+                  setEmail(e.target.value);
+                }} type="email" name="email" id="email" />
           </div>
           <div className="flex flex-col mt-6 sm:flex-row gap-4">
             

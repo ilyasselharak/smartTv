@@ -7,7 +7,6 @@ Client.init(process.env.NEXT_PUBLIC_COINBASE_API_KEY);
 export default async function coinVerifyRoute(req, res) {
 
     try {
-
         const rawBody = JSON.stringify(req.body)
         const signature = String(req.headers['x-cc-webhook-signature']);
         const webhookSecret = String(process.env.NEXT_PUBLIC_COINBASE_SECRET_KEY);
@@ -20,35 +19,17 @@ export default async function coinVerifyRoute(req, res) {
             // user paid, but transaction not confirm on blockchain 
             console.log("pending")
         }
-
         if (event.type === 'charge:confirmed') {
-            // TODO
-            // all good, charge confirmed
-            await initMongoose();
-            
-            const order = await Order.create({
-                products: ["ilyass"],
-                name: "",
-                email: "",
-                address: "",
-                city: "",
-                phone: "",
-                method: "Crypto",
-                paid: 1,
-              });
-              order.save();
+          
+              return res.redirect(302, '/success') 
         }
-
         if (event.type === 'charge:failed') {
             // TODO
             // charge failed or expired
             console.log("failed")
         }
-
     } catch (e) {
         res.status(500).send("error"); 
     }
-
-    return res.redirect(302, '/success') 
 
 };

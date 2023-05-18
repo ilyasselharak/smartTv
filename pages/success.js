@@ -1,8 +1,14 @@
 import Header from "@/components/Header";
 import Head from "next/head";
+import Link from "next/link";
+import { useEffect } from "react";
 
 
 export default function Success() {
+  useEffect(() => {
+    localStorage.clear()
+  }, [])
+  
   return (
     <>
     <Head>
@@ -20,7 +26,8 @@ export default function Success() {
       </Head>
     <Header/>
     <div className="mt-48 "></div>
-    <div className="text-center ">thanks you for choose us for provide you the best IPTV Server we will Contact you the Next 30 minutes</div>
+    <div className="text-center ">Thanks you for choose us for provide you the best IPTV Server we will Contact you the next 30 minutes or</div>
+    <div className="text-center "><Link href={"/contactus"} className="hover:text-blue-700 text-2xl text-red-700">Contact us</Link></div>
     </>
   )
 }
