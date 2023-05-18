@@ -261,7 +261,7 @@ export default function CheckoutPage() {
                             {packageInfo.name}
                           </h3>
                           <div className="flex mt-1 gap-2">
-                            <div className="grow font-bold text-black">
+                            <div className="grow font-bold text-emerald-500">
                               €{packageInfo.Price}
                             </div>
                             <div>

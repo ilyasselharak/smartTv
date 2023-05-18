@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }) {
         debug={true}
         style={{ background: "rgb(255 255 255)",boxShadow:"0px -3px 23px 1px black",border:"1px solid black",color:"black", opacity:"0.9"}}
         buttonStyle={{ borderRadius: "10px" }}
-        buttonText="That Fine!"
+        buttonText="Close"
       >
         <div className="text-center font-medium">
           This Website Uses Cookies See Our{" "}

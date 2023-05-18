@@ -33,7 +33,7 @@ export default function Home({ packages }) {
    .then(res=>setMovie(res.data.results))
    .catch(err=>console.log(err))
     const interval = setInterval(() => {
-      const target = new Date("05/18/2023 22:59:59");
+      const target = new Date("05/25/2023 22:59:59");
       const now = new Date();
       const difference = target.getTime() - now.getTime();
       const d = Math.floor(difference / (1000 * 60 * 60 * 24));
@@ -50,7 +50,7 @@ export default function Home({ packages }) {
   return (
     <>
       <Head>
-        <title>TvSmart</title>
+        <title>TvSmart | Home</title>
         <link rel="icon" type="image/x-icon" href="/logo.png" />
         <meta
           content="best iptv provider for USA, best iptv deal, secure payment, iptv reseller, american channels, asian channels list, european channels list, how to install iptv, channel list, arabic channels list, iptv subscription, holidays offer, better than netflix, iptv smarters, iptv box, iptv player,cobra,king 365,ott,m3u,mag,smart iptv,test,messi iptv price, iptv box, best iptv provider, best iptv alternative, quality, premium iptv subscription, 12 months premium iptv subscription, best iptv provider for 2023, full channel list, iptv on firestick 4k, iptv reddit, iptv smarters pro"
@@ -91,7 +91,7 @@ export default function Home({ packages }) {
                   TAKE IPTV SUBSCRIPTION FROM THE BEST SERVER SELLER AND BE IN
                   CONTACT
                 </div>
-                <div className="text-xl mb-3">ALL DEVICES ARE SUPPORTED</div>
+                <div className="text-xl mb-4">Package 1 Year only 4 Euros Per Month</div>
                 <Link
                   className="rounded-md text-xl p-2 mt-2 bg-blue-600 text-white"
                   href="/#price"
@@ -122,28 +122,10 @@ export default function Home({ packages }) {
               </div>
             
           </SwiperSlide> 
-          {/* <SwiperSlide>
-            <div className="h-[500px] bg3  xl:h-[700px] bg-cover bg-center">
-            <div className="text-white xl:w-[60%] xl:pt-[9%] sm:pt-[12%] pt-[13%] pl-[4%]">
-                <h1 className="pb-2 border-b border-red-500 w-fit mb-2">
-                  INSTANT ACTIVATION
-                </h1>
-                <div className="xl:text-4xl text-chartreuse w-fit font-bold text-2xl pb-2">
-                  HELP YOU ACTIVATE AND RUN YOU SERVER
-                </div>
-                <div className="text-xl mb-3">24/7 SUPPORT</div>
-                <Link
-                  className="rounded-md text-xl p-2 mt-2 bg-[#8A2BE2] text-white"
-                  href="/contactus"
-                >
-                  Contact Us
-                </Link>
-              </div>
-            </div>
-          </SwiperSlide> */}
+          
         </Swiper>
         <div className="text-red-700 text-center text-6xl py-6">
-          Why Subscribe to Our Service
+          Why Subscribe To Our Service
         </div>
 
         <div className="px-4">
@@ -281,7 +263,7 @@ export default function Home({ packages }) {
           Pricing
         </div>
         <div className=" text-center text-xl pb-2">
-          Choose Your IPTV PACKAGE
+          Choose Your IPTV Package
         </div>
 
         <div className=" pl-4 text-center text-xl border border-black p-4 m-4 rounded-md">
@@ -320,55 +302,7 @@ export default function Home({ packages }) {
           })}
         </Swiper>
         <ToastContainer />
-        {/* <div>
-          <div className="text-red-700 text-center text-4xl py-6" id="price">
-            Methods
-          </div> */}
-          {/* <Swiper
-            style={{ "zIndex": "0" }}
-            autoplay={{
-              delay: 2000,
-              disableOnInteraction: false,
-            }}
-            pagination={{
-              clickable: true,
-            }}
-            navigation={true}
-            slidesPerView={5}
-            modules={[Autoplay, Pagination, Navigation]}
-          >
-            <SwiperSlide>
-              <Image src="/paypal.png" alt="paypal" width={70} height={70} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src="/visa.png" alt="vasa cart" width={70} height={70} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src="/ideal.png" alt="ideal" width={70} height={70} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image
-                src="/mastercard.png"
-                alt="mastercart"
-                width={70}
-                height={70}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src="/sofort.png" alt="sofort" width={70} height={70} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src="/gpay.png" alt="google pay" width={70} height={70} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src="/apay.png" alt="apple pay" width={70} height={70} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src="/giropay.png" alt="giro pay" width={70} height={70} />
-            </SwiperSlide>
-          </Swiper>
-          </div>
-         */}
+        
          
         <div className="grid my-12 md:grid-cols-2 gap-x-12 grid-cols-1 md:px-52 sm:px-48 xl:px-72 py-4 2xl:px-80 lg:px-64 px-32">
           <div className="flex flex-col gap-4 mb-12">
@@ -480,7 +414,7 @@ export default function Home({ packages }) {
           spaceBetween={20}
           slidesPerView={4}
           autoplay={{
-            delay: 2000,
+            delay: 500,
             disableOnInteraction: false,
           }}
           modules={[Autoplay, Pagination, Navigation]}
@@ -505,6 +439,12 @@ export default function Home({ packages }) {
           </SwiperSlide>
           <SwiperSlide>
             <Image src="/appleTv.svg" alt="appleTv" width={200} height={300} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image src="/rmc.png" alt="rmc" width={200} height={300} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image src="/Zigo.png" alt="zigo" width={200} height={300} />
           </SwiperSlide>
         </Swiper>
         <Footer data={packages} />
