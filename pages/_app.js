@@ -1,12 +1,13 @@
 import { PackagesContextProvider } from "@/components/PackagesContext";
 import "@/styles/globals.css";
 import Link from "next/link";
+import { Analytics } from '@vercel/analytics/react';
 import CookieConsent from "react-cookie-consent";
 export default function App({ Component, pageProps }) {
   return (
     <PackagesContextProvider>
       <Component {...pageProps} />
-
+      <Analytics />
       <CookieConsent
         debug={true}
         style={{ background: "rgb(255 255 255)",boxShadow:"0px -3px 23px 1px black",border:"1px solid black",color:"black", opacity:"0.9"}}
