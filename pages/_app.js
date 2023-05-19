@@ -3,11 +3,11 @@ import "@/styles/globals.css";
 import Link from "next/link";
 import { Analytics } from '@vercel/analytics/react';
 import CookieConsent from "react-cookie-consent";
-import Trackingcode from "@/components/trackingcode";
+import TrackingCode from "@/components/TrackingCode";
 export default function App({ Component, pageProps }) {
   return (
     <PackagesContextProvider>
-      <Trackingcode/>
+      <TrackingCode/>
       <Component {...pageProps} />
       <Analytics />
       <CookieConsent

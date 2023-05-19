@@ -1,7 +1,7 @@
 import Script from 'next/script'
 
 
-export default function Trackingcode() {
+export default function TrackingCode() {
   return (
     <>
     <Script
