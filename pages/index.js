@@ -19,6 +19,7 @@ import Link from "next/link";
 import Head from "next/head";
 import { ToastContainer } from "react-toastify";
 import axios from "axios";
+import Tracking from "@/components/Tracking";
 
 export default function Home({ packages }) {
   
@@ -64,6 +65,7 @@ export default function Home({ packages }) {
           content="IPTV Provider | The best IPTV Service Provider"
           name="title"
         />
+        <Tracking/>
       </Head>
       <Header />
       <div className="top-20 sm:w-[730px] xl:w-full md:w-full 2xl:w-ful lg:w-full w-[600px] xl:top- right-0 relative">

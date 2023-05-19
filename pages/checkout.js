@@ -8,6 +8,7 @@ import Head from "next/head";
 import { PayPalButton } from "react-paypal-button-v2";
 
 import axios from "axios";
+import Link from "next/link";
 export default function CheckoutPage() {
 
   const { selectedPackages, setSelectedPackages } = useContext(PackagesContext);
@@ -84,6 +85,7 @@ export default function CheckoutPage() {
     }
   };
   const displayed = () => {
+    if(selectedPackages.length){
     switch (selectedOption) {
       case "paypal":
         return (
@@ -133,6 +135,8 @@ export default function CheckoutPage() {
         );
       case "Bank":
         return (
+
+          <>
           <div className="flex justify-center text-2xl mt-6">
             <div className="text-green-600">
               <div>
@@ -149,7 +153,10 @@ export default function CheckoutPage() {
                 <span className=" text-white font-bold">Amount:</span> €{total}
               </div>
             </div>
+            
           </div>
+          <div className="text-white font-bold text-center mt-4">You need to send ScreenShoot of the Transfer <Link className="text-red-700" href="/contactus">HERE</Link></div>
+          </>
         );
       case "crypto":
         return (
@@ -169,7 +176,8 @@ export default function CheckoutPage() {
         );
       
     }
-  };
+  }};
+  
   return (
     <>
       <Head>
