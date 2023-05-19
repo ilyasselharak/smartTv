@@ -1,7 +1,7 @@
 import Script from 'next/script'
+import React from 'react'
 
-
-export default function TrackingCode() {
+function Tracking() {
   return (
     <>
     <Script
@@ -20,3 +20,5 @@ export default function TrackingCode() {
     </>
   )
 }
+
+export default Tracking
