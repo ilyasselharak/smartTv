@@ -22,7 +22,7 @@ export default function ContactUs({ packages }) {
       </Head>
       <Header />
       <div className="mt-32 "></div>
-      <div className="flex ml-5 mb-3">
+      <div className="flex h-[700px] justify-center items-center flex-col sm:flex-row ml-5 mb-3">
         <form method="POST" action="/api/contact" className="flex w-[50%] flex-col gap-4">
           <div>
             <label for="name">Your Name: </label>
