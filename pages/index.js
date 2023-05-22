@@ -282,7 +282,7 @@ export default function Home({ packages }) {
           pagination={{
             clickable: true,
           }}
-          className="mySwiper h-[700px]"
+          className="mySwiper h-fit"
           navigation={true}
           slidesPerView="auto"
           spaceBetween={20}

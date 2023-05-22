@@ -29,7 +29,7 @@ export default function CheckoutPage() {
     if (!uniqIds.length) {
       setPackagesInfos([]);
     } else {
-      console.log();
+      
       fetch("/api/packages?ids=" + uniqIds.join(","))
         .then((response) => response.json())
         .then((json) => setPackagesInfos(json))
