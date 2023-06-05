@@ -7,7 +7,7 @@ import Head from "next/head";
 export default function ContactUs({ packages }) {
   return (
     <>
-    <Head>
+      <Head>
         <title>IPtvConfig | Contact</title>
         <link rel="icon" type="image/x-icon" href="/logo.png" />
         <meta
@@ -23,7 +23,11 @@ export default function ContactUs({ packages }) {
       <Header />
       <div className="mt-32 "></div>
       <div className="flex h-[700px] justify-center items-center flex-col sm:flex-row ml-5 mb-3">
-        <form method="POST" action="/api/contact" className="flex w-[50%] flex-col gap-4">
+        <form
+          method="POST"
+          action="/api/contact"
+          className="flex w-[50%] flex-col gap-4"
+        >
           <div>
             <label for="name">Your Name: </label>
             <input
@@ -52,12 +56,15 @@ export default function ContactUs({ packages }) {
               className="border-1 w-full border-black border p-1 rounded-sm"
             ></textarea>
           </div>
-          <button type="submit" className="bg-cyan-500 shadow-lg shadow-cyan-500/50 text-white p-2 rounded-md hover:shadow-indigo-500/40">
+          <button
+            type="submit"
+            className="bg-cyan-500 shadow-lg shadow-cyan-500/50 text-white p-2 rounded-md hover:shadow-indigo-500/40"
+          >
             Send
           </button>
         </form>
         <div className="flex flex-col gap-4 w-[50%]  p-8">
-          <div>Email: support@tv-smart.store</div> 
+          <div>Email: support@tv-smart.store</div>
           <div>Call or Whatsapp:</div>
           <div>Netherlands: +31610049923 </div>
           <div>Morocco: +212643528283</div>
@@ -65,6 +72,7 @@ export default function ContactUs({ packages }) {
           <address>Assendorperstraat 29 , zwolle Netherlands</address>
         </div>
       </div>
+
       <Footer data={packages} />
     </>
   );
